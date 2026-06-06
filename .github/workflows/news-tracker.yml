@@ -67,18 +67,19 @@ jobs:
       # NOT commit them, so we commit & push docs/ to main ourselves.
       - name: Commit generated pages
         id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "news-tracker[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Use the canonical URL so checkout's GITHUB_TOKEN credential pushes (not the
-          # Action's modified remote), giving deterministic contents:write access.
-          git remote set-url origin "https://github.com/${{ github.repository }}.git"
           git add docs/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "news update ${RUN_TS}"
-            git push origin HEAD:main
+            # Push with an explicit token URL so auth doesn't depend on the Action's
+            # remote setup or checkout's persisted credentials (GH masks the token).
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
 
