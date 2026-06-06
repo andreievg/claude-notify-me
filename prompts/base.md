@@ -40,6 +40,7 @@ For every topic file:
 ### 3. Summarize
 For each item:
 - 1–2 sentences, neutral and factual; lead with the concrete development (who/what/when).
+- Capture each item's **publication date** and show it on the item (e.g. "5 Jun 2026").
 - Always include at least one source link (the primary source).
 - Apply the topic's own summarization criteria if it specifies extra ones.
 - Assign a **severity** — `critical` / `high` / `medium` / `low` — using the topic's
@@ -54,7 +55,7 @@ For each item:
   "Last updated {{RUN_TS}}".
 - Link the stylesheet (`assets/styles.css`) and include a clear link to `history.html`.
 - Group items by topic (use the topic `title` as a subheading). Each item shows: headline,
-  1–2 sentence summary, a severity pill, and source link(s).
+  its publication date, a 1–2 sentence summary, a severity pill, and source link(s).
 - If a topic produced no results, still show its section with a plain line like
   "No notable updates this run." — **never invent news.**
 

@@ -82,7 +82,8 @@ body {
   padding: 14px 16px;
   margin-bottom: 12px;
 }
-.item h3 { font-size: 1rem; margin: 0 0 6px; line-height: 1.35; }
+.item h3 { font-size: 1rem; margin: 0 0 4px; line-height: 1.35; }
+.item .date { font-size: 0.8rem; color: var(--muted); margin: 0 0 6px; }
 .item p { margin: 0 0 8px; color: var(--text); }
 .item .sources { font-size: 0.85rem; }
 .item .sources a { color: var(--accent); text-decoration: none; }
