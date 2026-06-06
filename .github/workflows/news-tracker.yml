@@ -13,8 +13,9 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write # the Action auto-commits docs/ changes back to the branch
+  contents: write # commit the generated pages back to main
   id-token: write # required: the Action exchanges a GitHub OIDC token for its scoped token
+  pages: write    # request a GitHub Pages build after we commit (see last step)
 
 jobs:
   track:
@@ -53,9 +54,38 @@ jobs:
             4. Rewrite docs/history.html to link every archived run plus the current one.
 
             Every page must link to history.html. Never edit anything under .github/.
+            Only create/modify files under docs/. Do NOT run git or commit — a later
+            workflow step commits and publishes your changes.
 
           # Capability + cost controls.
           claude_args: >-
             --allowedTools "Read,Edit,Write,WebSearch,WebFetch"
             --model claude-sonnet-4-6
             --max-turns 30
+
+      # The Action (in scheduled/prompt mode) leaves edits in the working tree but does
+      # NOT commit them, so we commit & push docs/ to main ourselves.
+      - name: Commit generated pages
+        id: commit
+        run: |
+          git config user.name "news-tracker[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Use the canonical URL so checkout's GITHUB_TOKEN credential pushes (not the
+          # Action's modified remote), giving deterministic contents:write access.
+          git remote set-url origin "https://github.com/${{ github.repository }}.git"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "news update ${RUN_TS}"
+            git push origin HEAD:main
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # A commit pushed with GITHUB_TOKEN does NOT trigger the automatic
+      # "deploy from a branch" Pages build, so we request one explicitly.
+      - name: Trigger GitHub Pages build
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
