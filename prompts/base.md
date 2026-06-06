@@ -51,9 +51,15 @@ For each item:
 - Reuse the **existing built-in design** — read the current/seed `docs/index.html` and
   `docs/assets/styles.css` and keep the same structure, classes, and look. Fill in
   content; **do not redesign the page each run.** Minor refinements are fine.
-- Near the top, include the comment `<!-- run-ts: {{RUN_TS}} -->` and a visible heading
-  "Last updated {{RUN_TS}}".
-- Link the stylesheet (`assets/styles.css`) and include a clear link to `history.html`.
+- Near the top, include the comment `<!-- run-ts: {{RUN_TS}} -->` (machine id — keep the
+  UTC value verbatim) and a visible heading "Last updated {{RUN_TS_NZ}}" (New Zealand time).
+- In the header, also include a live next-run indicator element: `<span id="next-run"></span>`
+  (left empty — the script fills it in).
+- Show **all dates and times in New Zealand time** (Pacific/Auckland). Format article dates
+  like "7 Jun 2026".
+- Link the stylesheet (`assets/styles.css`), include a clear link to `history.html`, and
+  just before `</body>` include `<script src="assets/app.js" defer></script>` (it renders the
+  "hours till next run" — do NOT modify or inline app.js).
 - Structure the page by topic. For EACH topic (use the topic `title` as the heading), show:
   - a **summary** block (`<section class="summary">`) — one short synthesis (2–4 sentences
     or 3–5 bullets) of THAT topic's most important takeaways this run, leading with the

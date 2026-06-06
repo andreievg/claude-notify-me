@@ -27,8 +27,12 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Compute run timestamp (UTC)
-        run: echo "RUN_TS=$(date -u +'%Y-%m-%d-%H%MZ')" >> "$GITHUB_ENV"
+      - name: Compute run timestamps
+        run: |
+          # UTC machine id (used for the run-ts marker + archive filenames)
+          echo "RUN_TS=$(date -u +'%Y-%m-%d-%H%MZ')" >> "$GITHUB_ENV"
+          # Human-readable New Zealand time for display
+          echo "RUN_TS_NZ=$(TZ=Pacific/Auckland date +'%-d %b %Y, %-I:%M%p %Z')" >> "$GITHUB_ENV"
 
       - name: Run news tracker
         uses: anthropics/claude-code-action@v1
@@ -39,7 +43,9 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
           prompt: |
-            The current run timestamp is ${{ env.RUN_TS }} (use it verbatim).
+            The current run timestamp (machine id) is ${{ env.RUN_TS }} — use it verbatim
+            in the run-ts comment and archive filename. Show "Last updated" to readers as
+            ${{ env.RUN_TS_NZ }} (New Zealand time).
 
             Read prompts/base.md, then read every file under prompts/topics/
             EXCEPT files whose name starts with `_` (e.g. _TEMPLATE.md and any
