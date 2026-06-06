@@ -1,0 +1,59 @@
+name: news-tracker
+
+on:
+  schedule:
+    # Times are UTC. ~3x/day. 19:00 / 01:00 / 07:00 UTC ≈ NZ 07:00 / 13:00 / 19:00.
+    # Edit this single line to change cadence (keep it UTC).
+    - cron: "0 19,1,7 * * *"
+  workflow_dispatch: {}
+
+# Serialize scheduled + manual runs so two runs never race on the same commit.
+concurrency:
+  group: news-tracker
+  cancel-in-progress: false
+
+permissions:
+  contents: write # the Action auto-commits docs/ changes back to the branch
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Compute run timestamp (UTC)
+        run: echo "RUN_TS=$(date -u +'%Y-%m-%d-%H%MZ')" >> "$GITHUB_ENV"
+
+      - name: Run news tracker
+        uses: anthropics/claude-code-action@v1
+        with:
+          # Auth via Claude subscription OAuth token. To switch to a pay-as-you-go
+          # API key, replace this line with:
+          #   anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+
+          prompt: |
+            The current run timestamp is ${{ env.RUN_TS }} (use it verbatim).
+
+            Read prompts/base.md, then read every file under prompts/topics/
+            EXCEPT prompts/topics/_TEMPLATE.md. Follow prompts/base.md exactly:
+
+            1. Archive the existing docs/index.html: read its `<!-- run-ts: ... -->`
+               comment and copy the file verbatim to docs/<that-run-ts>.html.
+               Skip this if index.html is missing or marked `run-ts: SEED`.
+            2. Research each topic via web search and summarize per its criteria.
+            3. Write a fresh docs/index.html for run ${{ env.RUN_TS }} using the
+               existing built-in design (fill in content; do not redesign).
+            4. Rewrite docs/history.html to link every archived run plus the current one.
+
+            Every page must link to history.html. Never edit anything under .github/.
+
+          # Capability + cost controls.
+          claude_args: >-
+            --allowedTools "Read,Edit,Write,WebSearch,WebFetch"
+            --model claude-sonnet-4-6
+            --max-turns 30

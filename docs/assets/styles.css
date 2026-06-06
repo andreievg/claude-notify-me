@@ -1,0 +1,132 @@
+/* News Tracker — clean, self-contained default styling.
+   No external fonts or CDNs, so GitHub Pages serves it fast and offline-safe.
+   Claude reuses these classes each run and fills in content. */
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --border: #e3e6ea;
+  --text: #1b1f24;
+  --muted: #5c6670;
+  --accent: #2557d6;
+
+  /* severity pills */
+  --sev-low-bg: #eef1f4;     --sev-low-fg: #4a5560;
+  --sev-medium-bg: #e4eefc;  --sev-medium-fg: #1f4fb8;
+  --sev-high-bg: #fdeedd;    --sev-high-fg: #9a5b07;
+  --sev-critical-bg: #fde3e1; --sev-critical-fg: #b3261e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216;
+    --surface: #161a20;
+    --border: #262c34;
+    --text: #e7ebf0;
+    --muted: #9aa4b0;
+    --accent: #6f9bff;
+    --sev-low-bg: #232932;     --sev-low-fg: #aab4c0;
+    --sev-medium-bg: #16294a;  --sev-medium-fg: #8fb4ff;
+    --sev-high-bg: #3a2a12;    --sev-high-fg: #f0b366;
+    --sev-critical-bg: #3d1a18; --sev-critical-fg: #ff8a82;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.site-header h1 { font-size: 1.4rem; margin: 0; letter-spacing: -0.01em; }
+.site-header .updated { color: var(--muted); font-size: 0.85rem; }
+.site-header nav a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.site-header nav a:hover { text-decoration: underline; }
+
+/* Topic sections */
+.topic { margin: 0 0 32px; }
+.topic > h2 {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* News items */
+.item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.item h3 { font-size: 1rem; margin: 0 0 6px; line-height: 1.35; }
+.item p { margin: 0 0 8px; color: var(--text); }
+.item .sources { font-size: 0.85rem; }
+.item .sources a { color: var(--accent); text-decoration: none; }
+.item .sources a:hover { text-decoration: underline; }
+.empty { color: var(--muted); font-style: italic; }
+
+/* Severity pill */
+.pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.pill.low      { background: var(--sev-low-bg);      color: var(--sev-low-fg); }
+.pill.medium   { background: var(--sev-medium-bg);   color: var(--sev-medium-fg); }
+.pill.high     { background: var(--sev-high-bg);     color: var(--sev-high-fg); }
+.pill.critical { background: var(--sev-critical-bg); color: var(--sev-critical-fg); }
+
+/* History list */
+.history-list { list-style: none; padding: 0; margin: 0; }
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.history-list a { color: var(--accent); text-decoration: none; }
+.history-list a:hover { text-decoration: underline; }
+.history-list .when { color: var(--muted); font-size: 0.85rem; }
+
+/* Footer */
+.site-footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}

@@ -1,0 +1,34 @@
+<!--
+  History index. Claude rewrites this each run to list every archived <timestamp>.html
+  snapshot (newest first) plus the current run. Keep this structure/classes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History · News Tracker</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <h1>History</h1>
+      <nav><a href="index.html">&larr; Latest</a></nav>
+    </header>
+
+    <main>
+      <ul class="history-list">
+        <li>
+          <a href="index.html">Latest run</a>
+          <span class="when">no past runs yet</span>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">
+      Each entry links to an immutable snapshot of that run.
+    </footer>
+  </div>
+</body>
+</html>
