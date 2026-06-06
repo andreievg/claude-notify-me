@@ -35,7 +35,9 @@ Each run: the current `index.html` is archived to a dated `docs/<timestamp>.html
    summarization criteria, and the severity rubric. See `prompts/topics/example-ai-regulation.md`.
 3. Commit & push. The next run picks it up automatically.
 
-Remove a topic by deleting its file.
+Remove a topic by deleting its file. **Disable** one without deleting it by prefixing its
+filename with `_` (underscore) — e.g. `_old-topic.md`. Any topic file starting with `_` is
+ignored (that's also why `_TEMPLATE.md` is skipped).
 
 ## One-time setup
 

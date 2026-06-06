@@ -13,7 +13,8 @@ The workflow passes you the current run timestamp as `RUN_TS` (format
 ## Inputs
 
 1. Read this file.
-2. Read **every** file under `prompts/topics/` **except** `prompts/topics/_TEMPLATE.md`.
+2. Read **every** file under `prompts/topics/` **except** files whose name starts with an
+   underscore (`_`) — e.g. `_TEMPLATE.md` and any disabled topics.
    Each file describes one topic: front-matter config + human guidance + a severity rubric.
 
 ---

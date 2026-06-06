@@ -40,7 +40,8 @@ jobs:
             The current run timestamp is ${{ env.RUN_TS }} (use it verbatim).
 
             Read prompts/base.md, then read every file under prompts/topics/
-            EXCEPT prompts/topics/_TEMPLATE.md. Follow prompts/base.md exactly:
+            EXCEPT files whose name starts with `_` (e.g. _TEMPLATE.md and any
+            disabled topics). Follow prompts/base.md exactly:
 
             1. Archive the existing docs/index.html: read its `<!-- run-ts: ... -->`
                comment and copy the file verbatim to docs/<that-run-ts>.html.

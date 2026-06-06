@@ -4,7 +4,8 @@ This repo publishes a static news digest to GitHub Pages on a schedule. When you
 via the GitHub Action, follow these rules (the full behavioral spec is `prompts/base.md`).
 
 ## What you do each run
-1. Read `prompts/base.md` and all `prompts/topics/*.md` except `_TEMPLATE.md`.
+1. Read `prompts/base.md` and all `prompts/topics/*.md` except files starting with `_`
+   (e.g. `_TEMPLATE.md` and any disabled topics).
 2. Archive the current `docs/index.html` to `docs/<its run-ts>.html` (skip if `run-ts: SEED`).
 3. Research each topic with `WebSearch` / `WebFetch`; summarize per its criteria + severity.
 4. Write a fresh `docs/index.html` for the current `RUN_TS`.

@@ -31,8 +31,12 @@ How to assign each item's severity. (Display-only today; used for notifications 
 
 <!--
 HOW TO ADD A TOPIC:
-1. Copy this file to prompts/topics/<your-topic>.md (any name except _TEMPLATE.md).
+1. Copy this file to prompts/topics/<your-topic>.md (any name NOT starting with `_`).
 2. Fill in the front-matter and the three sections above.
 3. Commit & push. The next scheduled run (or a manual "Run workflow") will pick it up —
    no workflow changes needed.
+
+HOW TO DISABLE A TOPIC WITHOUT DELETING IT:
+Rename its file to start with an underscore (e.g. _my-topic.md). Any file under
+prompts/topics/ whose name starts with `_` is ignored by the tracker.
 -->
