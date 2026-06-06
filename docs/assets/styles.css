@@ -65,6 +65,27 @@ body {
 .site-header nav a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
 .site-header nav a:hover { text-decoration: underline; }
 
+/* Overall summary block (top of page) */
+.summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 0 0 28px;
+}
+.summary h2 { margin-top: 0; font-size: 1.1rem; }
+
+/* Drill-down: collapsible topic sections */
+details.topic > summary {
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+details.topic[open] > summary { margin-bottom: 12px; }
+
 /* Topic sections */
 .topic { margin: 0 0 32px; }
 .topic > h2 {

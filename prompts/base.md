@@ -54,8 +54,15 @@ For each item:
 - Near the top, include the comment `<!-- run-ts: {{RUN_TS}} -->` and a visible heading
   "Last updated {{RUN_TS}}".
 - Link the stylesheet (`assets/styles.css`) and include a clear link to `history.html`.
-- Group items by topic (use the topic `title` as a subheading). Each item shows: headline,
-  its publication date, a 1–2 sentence summary, a severity pill, and source link(s).
+- Lead the page with ONE **Overall summary** block (e.g. `<section class="summary">`): a
+  short synthesis — 2–4 sentences or 3–5 bullets — of the most important takeaways across
+  ALL topics this run, leading with the highest-severity developments. This single
+  big-picture summary is what the reader sees first.
+- Below the summary, a **drill-down**: group items by topic (topic `title` as the heading),
+  with each topic's items inside a collapsible `<details>` block (its `<summary>` = the
+  topic title) so the page opens on the summary and readers expand for the full articles.
+  Each item shows: headline, its publication date, a 1–2 sentence summary, a severity pill,
+  and source link(s).
 - If a topic produced no results, still show its section with a plain line like
   "No notable updates this run." — **never invent news.**
 
