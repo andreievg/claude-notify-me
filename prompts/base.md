@@ -57,7 +57,9 @@ For each item:
 - Structure the page by topic. For EACH topic (use the topic `title` as the heading), show:
   - a **summary** block (`<section class="summary">`) — one short synthesis (2–4 sentences
     or 3–5 bullets) of THAT topic's most important takeaways this run, leading with the
-    highest-severity developments. This is what the reader sees first for the topic.
+    highest-severity developments. This is what the reader sees first for the topic. If the
+    topic file defines a **Keynote**, OPEN the summary with it: a bold one-line verdict
+    answering the topic's core question, followed by the topic's KPIs.
   - then a **drill-down**: that topic's individual articles inside a collapsible `<details>`
     block (its `<summary>` labels it, e.g. "Articles (N)"). Each article shows: headline,
     its publication date, a 1–2 sentence summary, a severity pill, and source link(s).

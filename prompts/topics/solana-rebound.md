@@ -21,6 +21,19 @@ sources_prefer:
   - solana.com
 ---
 
+## Keynote
+Open this topic's summary with a clear verdict on the core question — **Is crypto / Solana
+rebounding?** Pick one (in bold): **Rebounding**, **Not rebounding**, or **Mixed — no clear
+trend**, plus one sentence justifying it. Then list the KPIs (latest value + short-term
+change where available):
+- SOL price and 7-day % change
+- BTC price and recent direction
+- Solana TVL (and change vs. recent)
+- Spot SOL ETF net flows (recent)
+- Altcoin Season Index and/or BTC dominance
+
+Base the verdict on the data, not hope; if signals conflict, say **Mixed**.
+
 ## What to track
 Signals that bear on the question: **"When is the broader crypto market — and Solana (SOL)
 in particular — going to rebound?"** Track both market-wide drivers and Solana-specific
