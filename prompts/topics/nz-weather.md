@@ -2,10 +2,12 @@
 id: nz-weather
 title: "NZ Severe Weather Watch"
 lookback_days: 2
-max_items: 8
+max_items: 5
 queries:
   - "New Zealand severe weather warning"
   - "MetService NZ weather warning"
+  - "New Zealand wind warning"
+  - "New Zealand snow warning"
 ---
 
 ## What to track
