@@ -88,7 +88,15 @@ jobs:
             echo "Preview unchanged."; exit 0
           fi
           git commit -m "preview: ${{ steps.prep.outputs.topic_id }} (PR #${{ inputs.pr_number }} v${{ steps.prep.outputs.version }})"
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+          PUSH_URL="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          # Rebase onto latest main and retry if a concurrent push advanced it.
+          for attempt in 1 2 3 4 5; do
+            if git push "$PUSH_URL" HEAD:main; then break; fi
+            if [ "$attempt" = 5 ]; then echo "push failed after retries"; exit 1; fi
+            echo "push rejected — rebase + retry $attempt"
+            git fetch -q origin main && git rebase -q origin/main || { echo "rebase conflict"; exit 1; }
+            sleep 2
+          done
           gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
           URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/previews/$(basename "${{ steps.prep.outputs.preview }}")"
           gh pr comment "${{ inputs.pr_number }}" --body "🔎 **Preview v${{ steps.prep.outputs.version }}** (only this topic): $URL

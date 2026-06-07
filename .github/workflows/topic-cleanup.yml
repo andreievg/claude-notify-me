@@ -23,14 +23,22 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          shopt -s nullglob
-          FILES=( docs/previews/*-pr${{ github.event.pull_request.number }}-v*.html )
-          if [ ${#FILES[@]} -eq 0 ]; then
-            echo "No previews to remove."; exit 0
-          fi
           git config user.name "news-tracker[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm -q "${FILES[@]}"
-          git commit -m "cleanup: remove previews for PR #${{ github.event.pull_request.number }}"
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
-          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+          shopt -s nullglob
+          # Re-sync to latest main and recompute each attempt so a concurrent push
+          # (another preview/cleanup) can't make us miss files or get rejected.
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            FILES=( docs/previews/*-pr${{ github.event.pull_request.number }}-v*.html )
+            if [ ${#FILES[@]} -eq 0 ]; then echo "No previews to remove."; exit 0; fi
+            git rm -q "${FILES[@]}"
+            git commit -m "cleanup: remove previews for PR #${{ github.event.pull_request.number }}"
+            if git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main; then
+              gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+              exit 0
+            fi
+            echo "push rejected — retry $attempt"; sleep 3
+          done
+          echo "cleanup failed after retries"; exit 1
