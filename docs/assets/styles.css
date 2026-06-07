@@ -66,8 +66,30 @@ body {
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .site-header .updated { color: var(--muted); font-size: 0.85rem; }
+.site-header nav { display: flex; gap: 12px; align-items: center; }
 .site-header nav a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
 .site-header nav a:hover { text-decoration: underline; }
+.site-header nav a.add-topic {
+  background: var(--accent);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.site-header nav a.add-topic:hover { filter: brightness(1.08); text-decoration: none; }
+
+/* PR preview banner */
+.pr-preview {
+  background: var(--sev-high-bg);
+  color: var(--sev-high-fg);
+  border: 1px solid var(--sev-high-fg);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.pr-preview a { color: inherit; }
 #next-run {
   display: inline-block;
   font-size: 0.8rem;

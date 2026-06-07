@@ -41,10 +41,20 @@ ignored (that's also why `_TEMPLATE.md` is skipped).
 
 ### Add/edit topics via a GitHub issue (no editing files)
 
-Open a **New issue → "Topic"**, fill in the form, and submit. The form applies the `topic`
-label, which triggers [topic-from-issue.yml](.github/workflows/topic-from-issue.yml): a bot
-writes/updates `prompts/topics/<id>.md` and comments back. To **edit** a topic later, reuse
-the same `id` (or just edit the original issue). Only `topic`-labelled issues are processed.
+1. **New issue → "Topic"** (or the **＋ Add topic** link on the site), fill the form, submit.
+   The form applies the `topic` label.
+2. A bot puts the topic on a branch and **opens a PR** — it does *not* go live yet.
+3. For each version of the PR, a **preview page** is generated for *only that topic* and
+   linked in a PR comment (`…github.io/claude-notify-me/previews/<id>-pr<N>-v<n>.html`).
+4. **Comment on the PR** to refine it — any comment is treated as an edit instruction;
+   the topic updates and a new preview version is posted.
+5. **Merge the PR** to make the topic live (it joins the 3×/day rotation); its previews are
+   cleaned up automatically.
+
+Workflows: [topic-from-issue.yml](.github/workflows/topic-from-issue.yml),
+[topic-comment.yml](.github/workflows/topic-comment.yml),
+[preview-topic.yml](.github/workflows/preview-topic.yml),
+[topic-cleanup.yml](.github/workflows/topic-cleanup.yml).
 
 ## One-time setup
 

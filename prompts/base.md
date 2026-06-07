@@ -60,6 +60,9 @@ For each item:
 - Link the stylesheet (`assets/styles.css`), include a clear link to `history.html`, and
   just before `</body>` include `<script src="assets/app.js" defer></script>` (it renders the
   "hours till next run" — do NOT modify or inline app.js).
+- In the header, top-right, include an **"＋ Add topic"** link (class `add-topic`) to
+  `https://github.com/andreievg/claude-notify-me/issues/new?template=topic.yml` — it opens
+  the Topic issue form. Put it in the header `<nav>` alongside the History link.
 - Structure the page by topic. For EACH topic (use the topic `title` as the heading), show:
   - a **summary** block (`<section class="summary">`) — one short synthesis (2–4 sentences
     or 3–5 bullets) of THAT topic's most important takeaways this run, leading with the

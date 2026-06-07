@@ -1,0 +1,95 @@
+name: preview-topic
+
+# Reusable: render a preview page for the ONE topic a PR branch adds/changes, publish it
+# under main/docs/previews/ (so it's live on Pages), and comment the link on the PR.
+# Called in-run by topic-from-issue.yml and topic-comment.yml — we never rely on a
+# GITHUB_TOKEN push to trigger a separate workflow (it wouldn't).
+on:
+  workflow_call:
+    inputs:
+      branch:
+        required: true
+        type: string
+      pr_number:
+        required: true
+        type: string
+
+permissions:
+  contents: write       # publish the preview to main
+  pull-requests: write  # comment the link
+  id-token: write       # Action OIDC token exchange
+  pages: write          # request a Pages build
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find changed topic + version
+        id: prep
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch -q origin "${{ inputs.branch }}"
+          CHANGED=$(git diff --name-only origin/main "origin/${{ inputs.branch }}" -- prompts/topics/ \
+                    | grep -vE '/_' | grep -E '\.md$' | head -1)
+          if [ -z "$CHANGED" ]; then
+            echo "No topic change vs main — skipping preview."
+            echo "skip=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # Overlay the branch's version of the topic file so Claude can read it (not committed).
+          git show "origin/${{ inputs.branch }}:$CHANGED" > "$CHANGED"
+          ID=$(basename "$CHANGED" .md)
+          mkdir -p docs/previews
+          N=$(( $(ls docs/previews/${ID}-pr${{ inputs.pr_number }}-v*.html 2>/dev/null | wc -l | tr -d ' ') + 1 ))
+          {
+            echo "skip=false"
+            echo "topic_file=$CHANGED"
+            echo "topic_id=$ID"
+            echo "version=$N"
+            echo "preview=docs/previews/${ID}-pr${{ inputs.pr_number }}-v${N}.html"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Render preview (Claude)
+        if: steps.prep.outputs.skip == 'false'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            Build a PREVIEW page for ONE topic only: ${{ steps.prep.outputs.topic_file }}
+            (id "${{ steps.prep.outputs.topic_id }}"). Read prompts/base.md for the page
+            format and look, then research that single topic now (web search) and write the
+            result to ${{ steps.prep.outputs.preview }} as a standalone page:
+            - same design as the main site, but link the stylesheet as "../assets/styles.css"
+              and the script as "../assets/app.js" (the file is one folder deeper).
+            - include the topic's summary (keynote verdict + KPIs if defined), severity pills,
+              article publication dates in New Zealand time, and the collapsible drill-down.
+            - at the very top add a banner element
+              <div class="pr-preview">PR preview · #${{ inputs.pr_number }} · v${{ steps.prep.outputs.version }} · not live until merged · <a href="https://github.com/${{ github.repository }}/pull/${{ inputs.pr_number }}">view PR</a></div>
+            Write ONLY ${{ steps.prep.outputs.preview }}. Do not modify any other file.
+          claude_args: >-
+            --allowedTools "Read,Edit,Write,WebSearch,WebFetch"
+            --model claude-sonnet-4-6
+            --max-turns 30
+
+      - name: Publish preview to main + comment link
+        if: steps.prep.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "news-tracker[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.prep.outputs.preview }}"
+          if git diff --cached --quiet; then
+            echo "Preview unchanged."; exit 0
+          fi
+          git commit -m "preview: ${{ steps.prep.outputs.topic_id }} (PR #${{ inputs.pr_number }} v${{ steps.prep.outputs.version }})"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+          URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/previews/$(basename "${{ steps.prep.outputs.preview }}")"
+          gh pr comment "${{ inputs.pr_number }}" --body "🔎 **Preview v${{ steps.prep.outputs.version }}** (only this topic): $URL
+          _Give it a minute for Pages to build. Comment on this PR to refine the topic — each change makes a new preview._"

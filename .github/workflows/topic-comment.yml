@@ -1,0 +1,96 @@
+name: topic-comment
+
+# Refine a topic by commenting on its PR. Any human (non-bot) comment on a `topic` PR is
+# treated as an edit instruction; the topic file on the PR branch is updated and a new
+# preview version is generated.
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+  pages: write
+
+concurrency:
+  group: topic-comment-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: >
+      github.event.issue.pull_request != null &&
+      contains(github.event.issue.labels.*.name, 'topic') &&
+      github.event.comment.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      branch: ${{ steps.br.outputs.branch }}
+      pr_number: ${{ steps.br.outputs.pr_number }}
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout PR branch
+        id: br
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR="${{ github.event.issue.number }}"
+          BR=$(gh pr view "$PR" --json headRefName --jq .headRefName)
+          git fetch -q origin "$BR"
+          git checkout -B "$BR" "origin/$BR"
+          echo "BRANCH=$BR" >> "$GITHUB_ENV"
+          echo "branch=$BR" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR" >> "$GITHUB_OUTPUT"
+
+      - name: Save comment
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+        run: printf '%s' "$COMMENT" > comment.md
+
+      - name: Apply comment to the topic (Claude)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            A reviewer commented on a topic PR; their comment is in ./comment.md. This PR
+            changes exactly one file under prompts/topics/. Update THAT topic file to apply
+            the reviewer's request (e.g. add/adjust queries, criteria, severity rubric,
+            keynote, lookback_days, sources). Keep the format from prompts/topics/_TEMPLATE.md
+            and prompts/base.md. Only modify that one topic file. If the comment is just
+            discussion and not a change request, make no changes.
+          claude_args: >-
+            --allowedTools "Read,Edit,Write"
+            --model claude-sonnet-4-6
+            --max-turns 20
+
+      - name: Commit to branch
+        id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -f comment.md
+          git config user.name "news-tracker[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add prompts/topics/
+          if git diff --cached --quiet; then
+            echo "No change from comment."
+            echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          git commit -m "topic: refine from PR #${{ github.event.issue.number }} comment"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "HEAD:$BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          gh api -X POST "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=+1 || true
+
+  preview:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/preview-topic.yml
+    with:
+      branch: ${{ needs.update.outputs.branch }}
+      pr_number: ${{ needs.update.outputs.pr_number }}
+    secrets: inherit

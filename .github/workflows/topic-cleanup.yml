@@ -1,0 +1,36 @@
+name: topic-cleanup
+
+# When a topic PR is closed (merged or not), delete its preview pages from main/docs/previews/.
+# If it was merged, the topic file is now on main and joins the 3×/day rotation.
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  cleanup:
+    if: contains(github.event.pull_request.labels.*.name, 'topic')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Remove this PR's preview pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          shopt -s nullglob
+          FILES=( docs/previews/*-pr${{ github.event.pull_request.number }}-v*.html )
+          if [ ${#FILES[@]} -eq 0 ]; then
+            echo "No previews to remove."; exit 0
+          fi
+          git config user.name "news-tracker[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q "${FILES[@]}"
+          git commit -m "cleanup: remove previews for PR #${{ github.event.pull_request.number }}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
