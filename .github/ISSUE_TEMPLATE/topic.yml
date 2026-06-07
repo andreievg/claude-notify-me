@@ -1,0 +1,86 @@
+name: Topic
+description: Add or edit a news-tracker topic (a bot writes it to prompts/topics/ on submit)
+title: "[topic] <id>: <title>"
+labels: ["topic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Define a topic to track. On submit, a bot creates/updates
+        `prompts/topics/<id>.md` and it appears on the next news run.
+        To **edit** an existing topic, use its same **id**.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Add or edit?
+      options:
+        - Add new topic
+        - Edit existing topic
+    validations:
+      required: true
+  - type: input
+    id: id
+    attributes:
+      label: Topic id
+      description: kebab-case — becomes the filename prompts/topics/<id>.md
+      placeholder: solana-rebound
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Shown as the section heading on the page
+      placeholder: Crypto Rebound Watch — Solana (SOL)
+    validations:
+      required: true
+  - type: textarea
+    id: queries
+    attributes:
+      label: Search queries
+      description: One per line
+      placeholder: |
+        Solana SOL price prediction
+        crypto market rebound forecast
+    validations:
+      required: true
+  - type: input
+    id: lookback_days
+    attributes:
+      label: Lookback days
+      description: Ignore items older than this
+      placeholder: "3"
+  - type: input
+    id: max_items
+    attributes:
+      label: Max items
+      placeholder: "8"
+  - type: textarea
+    id: sources_prefer
+    attributes:
+      label: Preferred sources (optional)
+      description: One per line
+      placeholder: |
+        reuters.com
+        coindesk.com
+  - type: textarea
+    id: what_to_track
+    attributes:
+      label: What to track
+      description: Exactly what counts as relevant news (and what doesn't)
+    validations:
+      required: true
+  - type: textarea
+    id: summarization_criteria
+    attributes:
+      label: Summarization criteria (optional)
+  - type: textarea
+    id: severity_rubric
+    attributes:
+      label: Severity rubric (optional)
+      description: What makes an item critical / high / medium / low
+  - type: textarea
+    id: keynote
+    attributes:
+      label: Keynote (optional)
+      description: A one-line verdict to open the summary with, plus KPIs to show

@@ -39,6 +39,13 @@ Remove a topic by deleting its file. **Disable** one without deleting it by pref
 filename with `_` (underscore) — e.g. `_old-topic.md`. Any topic file starting with `_` is
 ignored (that's also why `_TEMPLATE.md` is skipped).
 
+### Add/edit topics via a GitHub issue (no editing files)
+
+Open a **New issue → "Topic"**, fill in the form, and submit. The form applies the `topic`
+label, which triggers [topic-from-issue.yml](.github/workflows/topic-from-issue.yml): a bot
+writes/updates `prompts/topics/<id>.md` and comments back. To **edit** a topic later, reuse
+the same `id` (or just edit the original issue). Only `topic`-labelled issues are processed.
+
 ## One-time setup
 
 1. **Push to GitHub:** create a repo and push this directory.

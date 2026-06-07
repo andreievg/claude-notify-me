@@ -1,0 +1,87 @@
+name: topic-from-issue
+
+# Add/edit topics on the go: open an issue with the "Topic" form (it applies the
+# `topic` label). This workflow turns such issues into prompts/topics/<id>.md.
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write # commit the topic file
+  issues: write   # comment back on the issue
+  id-token: write # required by the Action's OIDC token exchange
+
+# One run per issue; a rapid re-edit cancels the in-flight run.
+concurrency:
+  group: topic-issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  sync-topic:
+    # Only act on issues of "type" topic (the form auto-applies this label).
+    if: contains(github.event.issue.labels.*.name, 'topic')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # Pass issue content via files (env vars), never interpolated into the prompt —
+      # avoids breaking YAML and prompt-injection from issue text.
+      - name: Save issue content
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s\n' "$ISSUE_TITLE" > issue-title.txt
+          printf '%s'   "$ISSUE_BODY"  > issue-body.md
+
+      - name: Build/update the topic file
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            A GitHub issue labeled 'topic' was opened or edited. Its title is in
+            ./issue-title.txt and its body (a filled-in topic form) is in ./issue-body.md.
+
+            Read prompts/topics/_TEMPLATE.md and prompts/base.md for the required format.
+            From the issue, determine the topic `id` (kebab-case) and whether this is an
+            ADD or an EDIT, then create or update prompts/topics/<id>.md to match the
+            template exactly: YAML front-matter (id, title, lookback_days, max_items,
+            queries, sources_prefer) plus the "What to track", "Summarization criteria"
+            and "Severity rubric" sections — and a "Keynote" section if the issue gives one.
+
+            For an EDIT, preserve existing content the issue didn't change. Apply sensible
+            defaults for omitted optional fields (lookback_days 3, max_items 8). Only
+            create/modify that one file under prompts/topics/. Do not edit anything else.
+          claude_args: >-
+            --allowedTools "Read,Edit,Write"
+            --model claude-sonnet-4-6
+            --max-turns 20
+
+      - name: Commit the topic file
+        id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -f issue-title.txt issue-body.md
+          git config user.name "news-tracker[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add prompts/topics/
+          if git diff --cached --quiet; then
+            echo "No topic changes."
+          else
+            git commit -m "topic: sync from issue #${{ github.event.issue.number }}"
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+            echo "file=$(git diff --name-only HEAD~1 HEAD -- prompts/topics/ | head -1)" >> "$GITHUB_OUTPUT"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment on the issue
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body \
+            "✅ Synced to \`${{ steps.commit.outputs.file }}\`. It will appear on the next news run (3×/day). Edit this issue to update it."
