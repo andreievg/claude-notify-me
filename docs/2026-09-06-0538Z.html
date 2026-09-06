@@ -1,0 +1,163 @@
+<!-- run-ts: 2026-09-06-0538Z -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News Tracker</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <h1>News Tracker</h1>
+      <span class="updated">Last updated: 6 Sep 2026, 5:38PM NZST</span>
+      <span id="next-run"></span>
+      <nav>
+        <a href="history.html">History &rarr;</a>
+        <a class="add-topic" href="https://github.com/andreievg/claude-notify-me/issues/new?template=topic.yml">&#xFF0B; Add topic</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="topic">
+        <h2>Crypto Rebound Watch &mdash; Solana (SOL)</h2>
+
+        <section class="summary">
+          <p><strong>Mixed &mdash; slight positive shift intraday</strong> &mdash; SOL surged ~4.2% to ~$106 on 6 Sep as BTC dominance pulled back from 60.66% to ~58.5%, hinting at early capital rotation toward altcoins. However, the 11-day spot ETF inflow streak has broken into modest net outflows (-$4.9M over Sep 3&ndash;5), and the CPI print on 11 Sep followed by the FOMC decision on 15&ndash;16 Sep remain the decisive binary risks for crypto direction. Solana-specific catalysts are building: Transaction V1 activates on mainnet in three days (9 Sep), and Alpenglow&rsquo;s mainnet activation is now confirmed for 28 Sep &mdash; pulled forward from October. <em>Not investment advice.</em></p>
+          <ul>
+            <li><strong>SOL price:</strong> ~$106 (+4.2% in 24h; $100 support intact; resistance $110 &rarr; $120 &rarr; $150)</li>
+            <li><strong>BTC price:</strong> ~$80K (holding key level; no major breakout yet)</li>
+            <li><strong>Solana TVL:</strong> ~$5.5B (stable; well below Aug 2025 peak of ~$11.7B)</li>
+            <li><strong>Spot SOL ETF:</strong> Inflow streak ended; net &minus;$4.9M over 3 sessions (Sep 3&ndash;5); cumulative AUM ~$1.35B</li>
+            <li><strong>BTC dominance / Altcoin Season:</strong> BTC dominance ~58.5% (down from 60.66%); early rotation signal but not yet altseason</li>
+          </ul>
+        </section>
+
+        <details>
+          <summary>Articles (8)</summary>
+
+          <div class="item">
+            <h3>Alpenglow Mainnet Activation Begins September 28 — Pulled Forward From October</h3>
+            <p class="date">5 Sep 2026</p>
+            <p>The official Agave v4.3 release schedule confirms that Alpenglow&rsquo;s feature activation on Solana mainnet-beta begins 28 Sep 2026 &mdash; earlier than the October target cited last week. The rollout is staged: validators are asked to run 10% of stake on v4.3 by 8 Sep, scaling to 25% by 14 Sep and a general recommendation by 21 Sep; feature gates then begin opening on 28 Sep across epoch boundaries (~38-hour intervals), with full effect extending into October. As of 1 Sep, only 0.39% of active stake ran Agave 4.3, so the adoption ramp will need to accelerate. Alpenglow replaces Proof of History and Tower BFT with new protocols targeting 100&ndash;150ms finality &mdash; roughly 100&times; faster than today. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://cryptoticker.io/en/solana-alpenglow-activation-date-validator-check/" target="_blank">CryptoTicker &mdash; Solana Alpenglow: Activation Begins September 28</a> &middot;
+                <a href="https://crypto.news/solana-alpenglow-targets-150ms-finality-in-october/" target="_blank">Crypto.news &mdash; Solana Alpenglow Upgrade Targets 150ms Finality</a> &middot;
+                <a href="https://www.panewslab.com/en/articles/040332ed-2b56-4391-8dbf-7566e19777a8" target="_blank">PANews &mdash; Alpenglow Upgrade Passed: Solana Overhauling Consensus</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Solana Launches Payment Channels With Alibaba Cloud: 1 Million Payments Per Second</h3>
+            <p class="date">3&ndash;4 Sep 2026</p>
+            <p>The Solana Foundation announced Payment Channels on 3 Sep, with Alibaba Cloud as the first partner and a headline benchmark of 1 million payments per second in testing (100,000 wallets through a proxy, ~$0.0078 per 1M payments). The technology targets agentic AI payments &mdash; a bottleneck where AI agents requiring a signature and settlement for every API call cannot operate at machine speed &mdash; building on the x402 and MPP protocols with an open-source SDK and docs. The Alibaba Cloud partnership is the first enterprise anchor; analysts note the benchmark is a controlled test, not current mainnet throughput, but the architecture supports real-time micropayment rails at near-zero cost. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://coinmarketcap.com/academy/article/solana-payment-channels-1m-payments-per-second" target="_blank">CoinMarketCap &mdash; Solana Launches Payment Channels, Reports 1M Payments Per Second</a> &middot;
+                <a href="https://blockchain.news/news/solana-payment-channels-1m-tps-alibaba" target="_blank">Blockchain.News &mdash; Solana Payment Channels Hit 1M TPS, Partner With Alibaba</a> &middot;
+                <a href="https://forkast.news/solana-payment-channels-hit-1-million-payments-per-second-but-who-is-actually-paying/" target="_blank">Forkast &mdash; Solana Payment Channels Hit 1M Payments Per Second &mdash; But Who Is Actually Paying?</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Transaction V1 Mainnet T-3 Days: September 9 Activation Confirmed</h3>
+            <p class="date">5&ndash;6 Sep 2026</p>
+            <p>Solana&rsquo;s Transaction V1 upgrade (SIMD-0296 + SIMD-0385) remains on track for mainnet activation on 9 Sep, tripling max transaction size from 1,232 to 4,096 bytes and enabling ZK proofs, BLS signatures, and larger multisig operations. V1 has been live on testnet since 1 Sep without incident, and a pre-activation RPC bug was patched; RPC operators should be running Agave v4.2.2 or v4.3.0-beta.3. The upgrade is opt-in &mdash; legacy transactions remain compatible &mdash; but wallets, indexers, block explorers, and SDKs will need updates to parse V1 transactions. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://solanacompass.com/news/solana-transaction-v1-heads-to-mainnet-september-9-format-breaking-changes-and-what-it-unlocks" target="_blank">Solana Compass &mdash; Solana Transaction V1 Mainnet Sept 9: SIMD-0296, Breaking Changes &amp; ZK Proofs</a> &middot;
+                <a href="https://crypto.news/solana-sets-sept-9-date-for-transaction-v1/" target="_blank">Crypto.news &mdash; Solana Sets Sept. 9 Date for Transaction V1</a> &middot;
+                <a href="https://primexbt.com/news/solana-sets-sept-9-date-for-transaction-v1-as-rent-cuts-begin/" target="_blank">PrimeXBT &mdash; Solana Sets Sept. 9 Date for Transaction V1 as Rent Cuts Begin</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Spot SOL ETF Inflow Streak Ends: Net &minus;$4.9M Outflows Over Three Sessions (Sep 3&ndash;5)</h3>
+            <p class="date">4&ndash;5 Sep 2026</p>
+            <p>After eleven consecutive days of net inflows (the strongest weekly pace since October 2025), U.S. spot Solana ETFs posted net outflows for three straight sessions through 5 Sep: $6.1M out Wednesday, $6.4M in Thursday, and $5.2M out Friday, for a three-session net of &minus;$4.9M. BSOL (Bitwise Solana Staking ETF) lost $2.8M and Fidelity&rsquo;s FSOL shed $2.4M on 5 Sep, while four products were flat. Cumulative net holdings remain substantial at ~$1.35B with combined AUM near $1.39B. The reversal is modest relative to the prior inflow streak, but signals that short-term institutional demand may have plateaued pending the CPI/FOMC macro outcomes. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://ts2.tech/en/solana-price-rises-4-3-while-u-s-etfs-post-5-2-million-outflow/" target="_blank">TS2 Space &mdash; Solana Price Rises 4.3% While U.S. ETFs Post $5.2 Million Outflow</a> &middot;
+                <a href="https://www.coinglass.com/etf/solana" target="_blank">CoinGlass &mdash; Solana ETF Fund Flows</a> &middot;
+                <a href="https://coingape.com/markets/solana-price-forecast-as-etf-inflows-extend-to-11-straight-days/" target="_blank">CoinGape &mdash; Solana Price Forecast as ETF Inflows Extend to 11 Straight Days</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>CPI Sep 11 + FOMC Sep 15&ndash;16: Dominant Macro Binary for Crypto in September</h3>
+            <p class="date">4&ndash;6 Sep 2026</p>
+            <p>The August CPI print (11 Sep) and the Federal Reserve&rsquo;s FOMC decision (15&ndash;16 Sep) are the two gating events for September crypto direction. The Fed under Kevin Warsh has held at 3.50&ndash;3.75% for five straight meetings in 2026, with the median dot at 3.8% (pointing to potential tightening, not easing). A 25 bps hike still carries elevated market odds following August&rsquo;s jobs blowout. Bitcoin&rsquo;s track record on FOMC decision days in 2026 has been bearish &mdash; three of five sessions saw $300M&ndash;$1B in liquidations. A soft CPI combined with a dovish hold would be the clearest catalyst for a BTC/SOL breakout; a confirmed hike would likely pressure both lower. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://www.cryptotimes.io/2026/09/04/bitcoin-price-prediction-september-2026-can-btc-reach-90k-or-retest-72k/" target="_blank">CryptoTimes &mdash; Bitcoin Price Prediction September 2026: Can BTC Reach $90K or Retest $72K?</a> &middot;
+                <a href="https://www.kucoin.com/news/flash/top-5-cryptos-to-watch-in-september-2026" target="_blank">KuCoin &mdash; Top 5 Cryptos To Watch In September 2026</a> &middot;
+                <a href="https://coinstats.app/ai/a/latest-news-for-bitcoin" target="_blank">CoinStats AI &mdash; Bitcoin News Today: Why BTC Is Up &mdash; 4 September 2026</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>SOL Rises 4.2% to ~$106 on 6 Sep; BTC Dominance Pulls Back to ~58.5% From 60.66% High</h3>
+            <p class="date">5&ndash;6 Sep 2026</p>
+            <p>Solana gained approximately 4.2% on 6 Sep to trade near $105.89&ndash;$106, extending above the $102&ndash;103 range of the prior session on elevated volume. Bitcoin dominance simultaneously pulled back from its 60.66% cycle high earlier in the week to approximately 58.5%, a level analysts associate with early altcoin capital rotation. An article from Bitsgap notes ETH and SOL have been outpacing BTC in percentage terms over recent weeks as BTC&rsquo;s price holds steady. A sustained break of BTC dominance below 57% would historically signal more meaningful altseason potential; the current move is constructive but not yet decisive. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://www.coinbase.com/price/solana" target="_blank">Coinbase &mdash; Solana (SOL) Price Today</a> &middot;
+                <a href="https://bitsgap.com/blog/why-eth-and-sol-are-outpacing-bitcoin-in-2026" target="_blank">Bitsgap &mdash; Why ETH and SOL Are Outpacing Bitcoin in 2026</a> &middot;
+                <a href="https://bitcoinfoundation.org/news/altcoins/understanding-altcoin-season-in-2026-what-are-altcoin-market-cycles/" target="_blank">Bitcoin Foundation &mdash; Understanding Altcoin Season in 2026</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>BTC Holds ~$80K as Fed Stays on Hold; No Rate Cuts in 2026 — Correlation With Rate-Sensitive Assets at Record</h3>
+            <p class="date">4&ndash;6 Sep 2026</p>
+            <p>Bitcoin continues to trade around the $80K level, roughly 37% above its June 2026 low of ~$58K but still ~37% below the October 2025 record of $126,200. The Federal Reserve has not cut rates once in 2026, holding at 3.50&ndash;3.75% across five meetings, and analysts note Bitcoin&rsquo;s correlation with rate-sensitive assets is at a record high &mdash; meaning Fed repricing directly transmits to crypto pricing. A soft August CPI (due 11 Sep) would be the fastest route to a breakout scenario; analysts at CryptoTimes set the bull case at $90K and the bear case at a $72K retest. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://fortune.com/article/price-of-bitcoin-09-01-2026/" target="_blank">Fortune &mdash; Current Price of Bitcoin for September 1, 2026</a> &middot;
+                <a href="https://www.cryptotimes.io/2026/09/04/bitcoin-price-prediction-september-2026-can-btc-reach-90k-or-retest-72k/" target="_blank">CryptoTimes &mdash; Bitcoin Price Prediction September 2026</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>~$100M Solana Ecosystem Token Unlocks in September: $TRUMP Largest at ~$60M (10.35% of Supply)</h3>
+            <p class="date">4&ndash;5 Sep 2026</p>
+            <p>The Solana ecosystem faces roughly $100M in scheduled token unlocks across September: the Official Trump token ($TRUMP) releases 28.27M tokens (~$60.25M, 10.35% of circulating supply); Pump.fun ($PUMP) unlocks 6.875B tokens (~$28.8M); Collector Crypt ($CARDS) releases ~$10.16M on 29 Sep; and Kamino ($KMNO) unlocks 229M tokens (~$5.51M) on 30 Sep. The $TRUMP event on 18 Sep is considered the most significant supply overhang given its size relative to circulating supply. These scheduled unlocks add incremental selling pressure to ecosystem tokens throughout the month, though buy-and-burn mechanisms for $CARDS provide a partial offset. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://solanafloor.com/news/solana-ecosystem-token-unlocks-what-to-watch-in-september-2026" target="_blank">Solana Floor &mdash; Solana Ecosystem Token Unlocks: What to Watch in September 2026</a> &middot;
+                <a href="https://cryptobriefing.com/solana-token-unlocks-september-2026/" target="_blank">Crypto Briefing &mdash; Solana Ecosystem Braces for Nearly $100M in Token Unlocks This September</a>
+              </span>
+            </p>
+          </div>
+
+        </details>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      Generated by an automated news tracker. Topics are configured in
+      <code>prompts/topics/</code>. &middot; <a href="history.html">View run history</a>
+    </footer>
+  </div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
