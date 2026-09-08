@@ -1,0 +1,158 @@
+<!-- run-ts: 2026-09-08-0541Z -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News Tracker</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <h1>News Tracker</h1>
+      <span class="updated">Last updated: 8 Sep 2026, 5:41PM NZST</span>
+      <span id="next-run"></span>
+      <nav>
+        <a href="history.html">History &rarr;</a>
+        <a class="add-topic" href="https://github.com/andreievg/claude-notify-me/issues/new?template=topic.yml">&#xFF0B; Add topic</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="topic">
+        <h2>Crypto Rebound Watch &mdash; Solana (SOL)</h2>
+
+        <section class="summary">
+          <p><strong>Mixed &mdash; no clear trend</strong> &mdash; Transaction V1 activates on Solana mainnet tomorrow (9 Sep) and Alpenglow consensus is confirmed for October, keeping the fundamental upgrade story intact. But macro headwinds remain sharp: Fed rate hike odds sit at ~60% ahead of Friday&rsquo;s CPI print (11 Sep) and the 16 Sep FOMC meeting, with BTC pulled back from $82K+ to ~$79,500. SOL ETF inflows continue (11+ consecutive days), while BTC dominance at ~59.2% and an altcoin season index below 40 signal that broad altcoin outperformance remains elusive. <em>Not investment advice.</em></p>
+          <ul>
+            <li><strong>SOL price:</strong> ~$103 (8 Sep 2026; -3% from $106 on 6 Sep; +44% over 30 days)</li>
+            <li><strong>BTC price:</strong> ~$79,500 (7 Sep 2026; down from $82K+ prior week; holding $77&ndash;$78K support band)</li>
+            <li><strong>Solana TVL:</strong> $5.92B (+25.46% vs. 30 days prior); DEX volume $1.96B/day (+42.99%)</li>
+            <li><strong>Spot SOL ETF:</strong> 11+ consecutive days of net inflows; cumulative net inflows ~$1.35B; AUM ~$1.39B</li>
+            <li><strong>Altcoin Season Index / BTC dominance:</strong> Index &lt;40 (well below 75 altseason threshold); BTC dominance ~59.2%</li>
+          </ul>
+        </section>
+
+        <details>
+          <summary>Articles (8)</summary>
+
+          <div class="item">
+            <h3>Fed Rate Hike Odds at ~60% After &ldquo;Bombastic&rdquo; Jobs Report &mdash; CPI Test Friday</h3>
+            <p class="date">7 Sep 2026</p>
+            <p>August non-farm payrolls came in at 162,000 &mdash; well above the 55,000 expected &mdash; pushing the probability of a 25 bp rate hike at the 16 Sep FOMC meeting to approximately 60%. BTC declined from above $82,000 to ~$79,500 as Treasury yields and dollar strength weighed on risk assets. Headline August CPI (due 11 Sep) is expected to hold at 3.4% year-over-year; core CPI is projected to fall to 2.4%, and a softer core reading could still give the Fed grounds to hold. A rate hike at this meeting would be the first since the five-consecutive-hold streak in 2026 and would represent a meaningful macro headwind for crypto. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://www.theblock.co/news/markets/2026-09-07-bitcoin-holds-near-80000-despite-renewed-fed-rate-hike-fears-as-cpi-test-looms-413692" target="_blank">The Block &mdash; Bitcoin Holds Near $80,000 Despite Renewed Fed Rate Hike Fears as CPI Test Looms</a> &middot;
+                <a href="https://finance.yahoo.com/markets/crypto/articles/fed-rate-hike-odds-hit-092724315.html" target="_blank">Yahoo Finance &mdash; Fed Rate Hike Odds Hit 70% as Traders Back September Increase</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Transaction V1 Activates on Solana Mainnet Tomorrow (9 Sep) &mdash; 3.3&times; Larger Transactions, ZK Proofs</h3>
+            <p class="date">7&ndash;8 Sep 2026</p>
+            <p>Solana&rsquo;s Transaction V1 (SIMD-0296 + SIMD-0385) goes live on mainnet on 9 Sep 2026 &mdash; one day from this run. The upgrade triples the maximum serialized transaction size from 1,232 to 4,096 bytes, enabling ZK proofs, BLS signatures, confidential transfers, and large multisig operations within a single atomic transaction. Testnet activation at epoch 1025 on 1 Sep ran cleanly. Compatible SDK minimums: @solana/kit 8.0.0, @solana/web3.js 1.99.0-beta.0, Agave v4.2.x. The new format is opt-in; V0 and legacy transactions remain fully compatible. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://solanacompass.com/news/solana-transaction-v1-heads-to-mainnet-september-9-format-breaking-changes-and-what-it-unlocks" target="_blank">Solana Compass &mdash; Transaction V1 Mainnet Sept 9: Breaking Changes &amp; ZK Proofs</a> &middot;
+                <a href="https://www.mexc.com/learn/article/solana-transaction-v1-explained-what-changes-on-september-9-/1" target="_blank">MEXC &mdash; Solana Transaction V1 Explained: What Changes on September 9?</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Alpenglow Consensus Upgrade Confirmed for October 2026 &mdash; 150ms Finality Targets Agave 4.3</h3>
+            <p class="date">6&ndash;8 Sep 2026</p>
+            <p>Solana&rsquo;s Alpenglow upgrade &mdash; replacing TowerBFT with a new consensus protocol targeting ~150ms transaction finality versus the current 12.8-second baseline &mdash; is confirmed for October 2026 via the Agave 4.3 release. Feature activation is scheduled to begin 28 Sep, with full network activation in October (no fixed day; contingent on ongoing testing). The upgrade introduces Votor (voting) and Rotor (block propagation) components. If successful, Alpenglow would represent the most fundamental change to Solana&rsquo;s consensus since launch and could significantly improve user experience for latency-sensitive DeFi and payment applications. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://crypto.news/solana-alpenglow-targets-150ms-finality-in-october/" target="_blank">Crypto.news &mdash; Solana Alpenglow Upgrade Targets 150ms Finality in October</a> &middot;
+                <a href="https://finance.yahoo.com/markets/crypto/articles/solana-prepares-alpenglow-upgrade-sol-123914197.html" target="_blank">Yahoo Finance &mdash; Solana Prepares for the Alpenglow Upgrade</a> &middot;
+                <a href="https://solanacompass.com/news/anza-developer-sets-mainnet-dates-transaction-v1-september-9-rent-reduction-this-week-alpenglow-in-october" target="_blank">Solana Compass &mdash; Anza Developer Sets Mainnet Dates: Transaction V1, Alpenglow in October</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Spot SOL ETF: 11+ Consecutive Days of Net Inflows; Cumulative ~$1.35B, AUM ~$1.39B</h3>
+            <p class="date">5&ndash;7 Sep 2026</p>
+            <p>U.S. spot Solana ETFs extended their net inflow streak to 11+ consecutive trading sessions through early September 2026; cumulative net inflows stand at approximately $1.35B with combined AUM at ~$1.39B. Bitwise BSOL leads with $949.83M in AUM and $1.03B in lifetime inflows, having crossed the $1B AUM milestone on 28 Aug. The streak reflects sustained institutional demand for regulated SOL exposure even as spot price softened, and it follows the SEC&rsquo;s 5 Sep &ldquo;Core ETF Asset&rdquo; designation. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill high">High</span>
+              <span class="sources">Sources:
+                <a href="https://coingape.com/markets/solana-price-forecast-as-etf-inflows-extend-to-11-straight-days/" target="_blank">CoinGape &mdash; Solana Price Forecast as ETF Inflows Extend to 11 Straight Days</a> &middot;
+                <a href="https://www.theblock.co/news/markets/2026-08-28-bitwise-fund-is-first-solana-etf-to-hit-1-billion-aum-413035" target="_blank">The Block &mdash; Bitwise Fund is First Solana ETF to Hit $1 Billion AUM</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>SOL ~$103 on 8 Sep; Down ~3% from $106 on 6 Sep as Macro Pressure Mounts</h3>
+            <p class="date">8 Sep 2026</p>
+            <p>SOL traded at approximately $103 on 8 Sep 2026 (market cap ~$60.5B), slipping ~3% from $106.06 on 6 Sep as rate-hike fears following the August jobs report weighed on risk assets. Over the trailing 30 days SOL remains up ~44%, with a 30-day low of $72.44 and high of $110.38. Key technical levels: resistance at $108&ndash;$110; support at $95 and $77&ndash;$78. Traders note a buy signal at $102 RSI strength, while a breakdown below $95 would re-test the mid-August demand zone. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://coinstats.app/ai/a/price-potential-solana" target="_blank">CoinStats AI &mdash; Solana Price Potential September 2026</a> &middot;
+                <a href="https://www.coinbase.com/price/solana" target="_blank">Coinbase &mdash; Solana (SOL) Price USD Today</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Bitcoin ETFs Record $987M Inflows for Third Consecutive Week; BTC Shows &ldquo;Exceptional Resilience&rdquo;</h3>
+            <p class="date">7 Sep 2026</p>
+            <p>Bitcoin ETFs recorded $987M in net inflows for the third consecutive week despite the macro headwinds from rising Treasury yields and U.S.-Iran tensions boosting oil prices. Onchain metrics showed realized capitalization increased by $9.36B over 30 days, turning positive after 87 days in negative territory &mdash; a constructive signal that new money is entering, not just rotating. Market strategists described the market as showing &ldquo;exceptional resilience&rdquo; at the $79&ndash;$80K level, with support seen at $77&ndash;$78K and resistance at $80&ndash;$82K. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://www.theblock.co/news/markets/2026-09-07-bitcoin-holds-near-80000-despite-renewed-fed-rate-hike-fears-as-cpi-test-looms-413692" target="_blank">The Block &mdash; Bitcoin Holds Near $80,000 Despite Renewed Fed Rate Hike Fears</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Solana TVL $5.92B (+25.46%), DEX Volume $1.96B/day (+42.99%) &mdash; DeFi Activity Expanding</h3>
+            <p class="date">6 Sep 2026</p>
+            <p>As of 6 Sep 2026, Solana DeFi TVL stands at $5.92B (up 25.46% from $4.72B over the prior 30 days), while daily DEX volume hit $1.96B (up 42.99% over the same window). Solana accounts for 23.65% of global on-chain DEX volume ($8.29B daily total), and volume is growing faster than TVL &mdash; suggesting more efficient utilisation of existing liquidity rather than new capital inflows alone. The combined picture points to genuine network activity growth rather than price-driven TVL inflation. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://blockchainmagazine.net/solana-defi-activity-in-2026-tvl-hits-5-92b-as-dex-volume-surges-past-1-96b-daily/" target="_blank">Blockchain Magazine &mdash; Solana DeFi TVL $5.92B, DEX Volume $1.96B Daily</a> &middot;
+                <a href="https://coinstats.app/ai/a/investment-analysis-solana" target="_blank">CoinStats AI &mdash; Solana Investment Analysis September 2026</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>BTC Dominance ~59.2%; Altcoin Season Index &lt;40 &mdash; Broad Altseason Remains Distant</h3>
+            <p class="date">8 Sep 2026</p>
+            <p>Bitcoin dominance sits at approximately 59.2% in early September 2026, down slightly from the prior run&rsquo;s 60.66% print but still firmly in &ldquo;BTC season&rdquo; territory. The Altcoin Season Index remains below 40 (versus the 75 threshold needed to confirm altseason), and analysts note that a sustained break below 55% BTC dominance is the prerequisite for broad SOL and altcoin outperformance &mdash; a level still well above current readings. A potential Fed rate hike on 16 Sep would reinforce BTC dominance by compressing risk appetite across altcoins. <em>Not investment advice.</em></p>
+            <p>
+              <span class="pill medium">Medium</span>
+              <span class="sources">Sources:
+                <a href="https://www.tv-hub.org/guide/bitcoin-dominance" target="_blank">TV-Hub &mdash; Bitcoin Dominance September 2026: Currently at 59.2%</a> &middot;
+                <a href="https://stealthex.io/blog/altcoin-season-index-guide-current-value/" target="_blank">StealthEx &mdash; Altcoin Season Index: Current Value &amp; 2026 Guide</a> &middot;
+                <a href="https://finance.yahoo.com/markets/crypto/articles/altcoin-season-2026-long-term-160000979.html" target="_blank">Yahoo Finance &mdash; Altcoin Season 2026? Long-Term Chart Hints at 2017 and 2021 Repeat</a>
+              </span>
+            </p>
+          </div>
+
+        </details>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      Generated by an automated news tracker. Topics are configured in
+      <code>prompts/topics/</code>. &middot; <a href="history.html">View run history</a>
+    </footer>
+  </div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
