@@ -1,1149 +1,312 @@
-<!--
-  History index. Claude rewrites this each run to list every archived <timestamp>.html
-  snapshot (newest first) plus the current run. Keep this structure/classes.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>History · News Tracker</title>
+  <title>Run History &mdash; News Tracker</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <div class="wrap">
     <header class="site-header">
-      <h1>History</h1>
-      <nav><a href="index.html">&larr; Latest</a></nav>
+      <h1>News Tracker</h1>
+      <span class="updated">Run History</span>
+      <nav>
+        <a href="index.html">&larr; Latest</a>
+        <a class="add-topic" href="https://github.com/andreievg/claude-notify-me/issues/new?template=topic.yml">&#xFF0B; Add topic</a>
+      </nav>
     </header>
 
     <main>
+      <h2 style="color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:6px;margin-bottom:16px;">All Runs</h2>
       <ul class="history-list">
-        <li>
-          <a href="index.html">2026-09-09-2131Z</a>
-          <span class="when">Current run</span>
-        </li>
-        <li>
-          <a href="2026-09-09-1212Z.html">2026-09-09-1212Z</a>
-          <span class="when">10 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-09-0547Z.html">2026-09-09-0547Z</a>
-          <span class="when">9 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-08-2139Z.html">2026-09-08-2139Z</a>
-          <span class="when">9 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-08-1201Z.html">2026-09-08-1201Z</a>
-          <span class="when">9 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-08-0541Z.html">2026-09-08-0541Z</a>
-          <span class="when">8 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-07-2155Z.html">2026-09-07-2155Z</a>
-          <span class="when">8 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-07-1320Z.html">2026-09-07-1320Z</a>
-          <span class="when">8 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-07-0548Z.html">2026-09-07-0548Z</a>
-          <span class="when">7 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-06-2107Z.html">2026-09-06-2107Z</a>
-          <span class="when">7 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-06-1133Z.html">2026-09-06-1133Z</a>
-          <span class="when">6 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-06-0538Z.html">2026-09-06-0538Z</a>
-          <span class="when">6 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-05-2059Z.html">2026-09-05-2059Z</a>
-          <span class="when">6 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-05-1110Z.html">2026-09-05-1110Z</a>
-          <span class="when">5 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-05-0522Z.html">2026-09-05-0522Z</a>
-          <span class="when">5 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-04-0537Z.html">2026-09-04-0537Z</a>
-          <span class="when">4 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-03-2135Z.html">2026-09-03-2135Z</a>
-          <span class="when">4 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-03-1159Z.html">2026-09-03-1159Z</a>
-          <span class="when">4 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-03-0532Z.html">2026-09-03-0532Z</a>
-          <span class="when">3 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-02-2137Z.html">2026-09-02-2137Z</a>
-          <span class="when">3 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-02-1159Z.html">2026-09-02-1159Z</a>
-          <span class="when">3 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-02-0531Z.html">2026-09-02-0531Z</a>
-          <span class="when">2 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-01-2138Z.html">2026-09-01-2138Z</a>
-          <span class="when">2 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-01-1225Z.html">2026-09-01-1225Z</a>
-          <span class="when">2 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-09-01-0606Z.html">2026-09-01-0606Z</a>
-          <span class="when">1 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-31-2308Z.html">2026-08-31-2308Z</a>
-          <span class="when">1 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-31-1455Z.html">2026-08-31-1455Z</a>
-          <span class="when">1 Sep 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-31-0646Z.html">2026-08-31-0646Z</a>
-          <span class="when">31 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-30-2150Z.html">2026-08-30-2150Z</a>
-          <span class="when">31 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-30-1239Z.html">2026-08-30-1239Z</a>
-          <span class="when">31 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-30-0619Z.html">2026-08-30-0619Z</a>
-          <span class="when">30 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-29-2132Z.html">2026-08-29-2132Z</a>
-          <span class="when">30 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-29-0742Z.html">2026-08-29-0742Z</a>
-          <span class="when">29 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-28-1918Z.html">2026-08-28-1918Z</a>
-          <span class="when">29 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-28-0226Z.html">2026-08-28-0226Z</a>
-          <span class="when">28 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-27-1059Z.html">2026-08-27-1059Z</a>
-          <span class="when">28 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-26-2142Z.html">2026-08-26-2142Z</a>
-          <span class="when">27 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-26-0748Z.html">2026-08-26-0748Z</a>
-          <span class="when">26 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-26-0224Z.html">2026-08-26-0224Z</a>
-          <span class="when">26 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-25-1933Z.html">2026-08-25-1933Z</a>
-          <span class="when">26 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-25-0745Z.html">2026-08-25-0745Z</a>
-          <span class="when">25 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-25-0218Z.html">2026-08-25-0218Z</a>
-          <span class="when">25 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-24-1931Z.html">2026-08-24-1931Z</a>
-          <span class="when">25 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-24-0758Z.html">2026-08-24-0758Z</a>
-          <span class="when">24 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-24-0222Z.html">2026-08-24-0222Z</a>
-          <span class="when">24 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-23-1922Z.html">2026-08-23-1922Z</a>
-          <span class="when">24 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-23-0734Z.html">2026-08-23-0734Z</a>
-          <span class="when">23 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-23-0223Z.html">2026-08-23-0223Z</a>
-          <span class="when">23 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-22-1923Z.html">2026-08-22-1923Z</a>
-          <span class="when">23 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-22-0733Z.html">2026-08-22-0733Z</a>
-          <span class="when">22 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-22-0215Z.html">2026-08-22-0215Z</a>
-          <span class="when">22 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-21-1927Z.html">2026-08-21-1927Z</a>
-          <span class="when">22 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-21-0744Z.html">2026-08-21-0744Z</a>
-          <span class="when">21 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-21-0223Z.html">2026-08-21-0223Z</a>
-          <span class="when">21 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-20-1932Z.html">2026-08-20-1932Z</a>
-          <span class="when">21 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-20-0742Z.html">2026-08-20-0742Z</a>
-          <span class="when">20 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-20-0217Z.html">2026-08-20-0217Z</a>
-          <span class="when">20 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-19-1927Z.html">2026-08-19-1927Z</a>
-          <span class="when">20 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-19-0218Z.html">2026-08-19-0218Z</a>
-          <span class="when">19 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-18-1928Z.html">2026-08-18-1928Z</a>
-          <span class="when">19 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-18-0739Z.html">2026-08-18-0739Z</a>
-          <span class="when">18 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-18-0216Z.html">2026-08-18-0216Z</a>
-          <span class="when">18 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-17-1929Z.html">2026-08-17-1929Z</a>
-          <span class="when">18 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-17-0753Z.html">2026-08-17-0753Z</a>
-          <span class="when">17 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-17-0220Z.html">2026-08-17-0220Z</a>
-          <span class="when">17 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-16-0732Z.html">2026-08-16-0732Z</a>
-          <span class="when">16 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-16-0221Z.html">2026-08-16-0221Z</a>
-          <span class="when">16 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-15-1922Z.html">2026-08-15-1922Z</a>
-          <span class="when">16 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-15-0732Z.html">2026-08-15-0732Z</a>
-          <span class="when">15 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-14-1949Z.html">2026-08-14-1949Z</a>
-          <span class="when">15 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-14-0817Z.html">2026-08-14-0817Z</a>
-          <span class="when">14 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-13-1955Z.html">2026-08-13-1955Z</a>
-          <span class="when">14 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-13-0822Z.html">2026-08-13-0822Z</a>
-          <span class="when">13 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-13-0327Z.html">2026-08-13-0327Z</a>
-          <span class="when">13 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-12-2000Z.html">2026-08-12-2000Z</a>
-          <span class="when">13 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-12-0323Z.html">2026-08-12-0323Z</a>
-          <span class="when">12 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-11-1959Z.html">2026-08-11-1959Z</a>
-          <span class="when">12 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-11-0809Z.html">2026-08-11-0809Z</a>
-          <span class="when">11 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-11-0304Z.html">2026-08-11-0304Z</a>
-          <span class="when">11 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-10-1955Z.html">2026-08-10-1955Z</a>
-          <span class="when">11 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-10-0840Z.html">2026-08-10-0840Z</a>
-          <span class="when">10 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-10-0311Z.html">2026-08-10-0311Z</a>
-          <span class="when">10 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-09-1935Z.html">2026-08-09-1935Z</a>
-          <span class="when">10 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-09-0754Z.html">2026-08-09-0754Z</a>
-          <span class="when">9 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-09-0302Z.html">2026-08-09-0302Z</a>
-          <span class="when">9 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-08-1931Z.html">2026-08-08-1931Z</a>
-          <span class="when">9 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-08-0750Z.html">2026-08-08-0750Z</a>
-          <span class="when">8 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-08-0255Z.html">2026-08-08-0255Z</a>
-          <span class="when">8 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-07-1952Z.html">2026-08-07-1952Z</a>
-          <span class="when">8 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-07-0815Z.html">2026-08-07-0815Z</a>
-          <span class="when">7 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-07-0350Z.html">2026-08-07-0350Z</a>
-          <span class="when">7 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-07-0041Z.html">2026-08-07-0041Z</a>
-          <span class="when">7 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-06-0941Z.html">2026-08-06-0941Z</a>
-          <span class="when">6 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-06-0414Z.html">2026-08-06-0414Z</a>
-          <span class="when">6 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-05-2027Z.html">2026-08-05-2027Z</a>
-          <span class="when">6 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-05-0938Z.html">2026-08-05-0938Z</a>
-          <span class="when">5 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-05-0411Z.html">2026-08-05-0411Z</a>
-          <span class="when">5 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-04-2026Z.html">2026-08-04-2026Z</a>
-          <span class="when">5 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-04-0939Z.html">2026-08-04-0939Z</a>
-          <span class="when">4 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-04-0415Z.html">2026-08-04-0415Z</a>
-          <span class="when">4 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-03-2027Z.html">2026-08-03-2027Z</a>
-          <span class="when">4 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-03-1044Z.html">2026-08-03-1044Z</a>
-          <span class="when">3 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-03-0431Z.html">2026-08-03-0431Z</a>
-          <span class="when">3 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-02-2011Z.html">2026-08-02-2011Z</a>
-          <span class="when">3 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-02-0910Z.html">2026-08-02-0910Z</a>
-          <span class="when">2 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-02-0424Z.html">2026-08-02-0424Z</a>
-          <span class="when">2 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-01-2010Z.html">2026-08-01-2010Z</a>
-          <span class="when">2 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-01-0907Z.html">2026-08-01-0907Z</a>
-          <span class="when">1 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-08-01-0422Z.html">2026-08-01-0422Z</a>
-          <span class="when">1 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-31-2021Z.html">2026-07-31-2021Z</a>
-          <span class="when">1 Aug 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-31-0946Z.html">2026-07-31-0946Z</a>
-          <span class="when">31 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-31-0424Z.html">2026-07-31-0424Z</a>
-          <span class="when">31 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-30-2015Z.html">2026-07-30-2015Z</a>
-          <span class="when">31 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-30-0932Z.html">2026-07-30-0932Z</a>
-          <span class="when">30 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-30-0407Z.html">2026-07-30-0407Z</a>
-          <span class="when">30 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-29-2013Z.html">2026-07-29-2013Z</a>
-          <span class="when">30 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-29-0939Z.html">2026-07-29-0939Z</a>
-          <span class="when">29 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-29-0413Z.html">2026-07-29-0413Z</a>
-          <span class="when">29 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-28-2017Z.html">2026-07-28-2017Z</a>
-          <span class="when">29 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-28-0937Z.html">2026-07-28-0937Z</a>
-          <span class="when">28 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-28-0412Z.html">2026-07-28-0412Z</a>
-          <span class="when">28 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-27-2024Z.html">2026-07-27-2024Z</a>
-          <span class="when">28 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-27-1044Z.html">2026-07-27-1044Z</a>
-          <span class="when">27 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-27-0438Z.html">2026-07-27-0438Z</a>
-          <span class="when">27 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-26-2010Z.html">2026-07-26-2010Z</a>
-          <span class="when">27 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-26-0914Z.html">2026-07-26-0914Z</a>
-          <span class="when">26 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-26-0427Z.html">2026-07-26-0427Z</a>
-          <span class="when">26 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-25-2012Z.html">2026-07-25-2012Z</a>
-          <span class="when">26 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-25-0901Z.html">2026-07-25-0901Z</a>
-          <span class="when">25 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-25-0412Z.html">2026-07-25-0412Z</a>
-          <span class="when">25 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-24-2021Z.html">2026-07-24-2021Z</a>
-          <span class="when">25 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-24-0922Z.html">2026-07-24-0922Z</a>
-          <span class="when">24 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-24-0416Z.html">2026-07-24-0416Z</a>
-          <span class="when">24 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-23-2014Z.html">2026-07-23-2014Z</a>
-          <span class="when">24 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-23-0925Z.html">2026-07-23-0925Z</a>
-          <span class="when">23 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-23-0416Z.html">2026-07-23-0416Z</a>
-          <span class="when">23 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-22-2012Z.html">2026-07-22-2012Z</a>
-          <span class="when">23 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-22-0927Z.html">2026-07-22-0927Z</a>
-          <span class="when">22 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-22-0418Z.html">2026-07-22-0418Z</a>
-          <span class="when">22 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-21-2019Z.html">2026-07-21-2019Z</a>
-          <span class="when">22 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-21-0928Z.html">2026-07-21-0928Z</a>
-          <span class="when">21 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-21-0416Z.html">2026-07-21-0416Z</a>
-          <span class="when">21 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-20-2022Z.html">2026-07-20-2022Z</a>
-          <span class="when">21 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-20-1014Z.html">2026-07-20-1014Z</a>
-          <span class="when">20 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-20-0436Z.html">2026-07-20-0436Z</a>
-          <span class="when">20 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-19-2007Z.html">2026-07-19-2007Z</a>
-          <span class="when">20 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-19-0905Z.html">2026-07-19-0905Z</a>
-          <span class="when">19 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-19-0421Z.html">2026-07-19-0421Z</a>
-          <span class="when">19 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-18-2004Z.html">2026-07-18-2004Z</a>
-          <span class="when">19 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-18-0849Z.html">2026-07-18-0849Z</a>
-          <span class="when">18 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-18-0356Z.html">2026-07-18-0356Z</a>
-          <span class="when">18 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-17-2006Z.html">2026-07-17-2006Z</a>
-          <span class="when">18 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-17-0911Z.html">2026-07-17-0911Z</a>
-          <span class="when">17 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-17-0408Z.html">2026-07-17-0408Z</a>
-          <span class="when">17 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-16-2003Z.html">2026-07-16-2003Z</a>
-          <span class="when">17 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-16-0917Z.html">2026-07-16-0917Z</a>
-          <span class="when">16 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-16-0409Z.html">2026-07-16-0409Z</a>
-          <span class="when">16 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-15-2012Z.html">2026-07-15-2012Z</a>
-          <span class="when">16 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-15-0910Z.html">2026-07-15-0910Z</a>
-          <span class="when">15 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-15-0406Z.html">2026-07-15-0406Z</a>
-          <span class="when">15 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-14-2014Z.html">2026-07-14-2014Z</a>
-          <span class="when">15 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-14-0905Z.html">2026-07-14-0905Z</a>
-          <span class="when">14 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-14-0357Z.html">2026-07-14-0357Z</a>
-          <span class="when">14 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-13-2017Z.html">2026-07-13-2017Z</a>
-          <span class="when">14 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-13-1029Z.html">2026-07-13-1029Z</a>
-          <span class="when">13 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-13-0431Z.html">2026-07-13-0431Z</a>
-          <span class="when">13 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-12-2006Z.html">2026-07-12-2006Z</a>
-          <span class="when">13 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-12-0904Z.html">2026-07-12-0904Z</a>
-          <span class="when">12 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-12-0426Z.html">2026-07-12-0426Z</a>
-          <span class="when">12 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-11-2006Z.html">2026-07-11-2006Z</a>
-          <span class="when">12 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-11-0849Z.html">2026-07-11-0849Z</a>
-          <span class="when">11 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-11-0413Z.html">2026-07-11-0413Z</a>
-          <span class="when">11 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-10-2025Z.html">2026-07-10-2025Z</a>
-          <span class="when">11 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-10-1025Z.html">2026-07-10-1025Z</a>
-          <span class="when">10 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-10-0453Z.html">2026-07-10-0453Z</a>
-          <span class="when">10 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-09-2048Z.html">2026-07-09-2048Z</a>
-          <span class="when">10 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-09-1026Z.html">2026-07-09-1026Z</a>
-          <span class="when">9 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-09-0455Z.html">2026-07-09-0455Z</a>
-          <span class="when">9 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-08-2022Z.html">2026-07-08-2022Z</a>
-          <span class="when">9 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-08-0926Z.html">2026-07-08-0926Z</a>
-          <span class="when">8 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-08-0415Z.html">2026-07-08-0415Z</a>
-          <span class="when">8 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-07-2050Z.html">2026-07-07-2050Z</a>
-          <span class="when">8 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-07-1027Z.html">2026-07-07-1027Z</a>
-          <span class="when">7 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-07-0454Z.html">2026-07-07-0454Z</a>
-          <span class="when">7 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-06-2053Z.html">2026-07-06-2053Z</a>
-          <span class="when">7 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-06-1138Z.html">2026-07-06-1138Z</a>
-          <span class="when">6 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-06-0514Z.html">2026-07-06-0514Z</a>
-          <span class="when">6 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-05-2016Z.html">2026-07-05-2016Z</a>
-          <span class="when">6 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-05-0943Z.html">2026-07-05-0943Z</a>
-          <span class="when">5 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-05-0458Z.html">2026-07-05-0458Z</a>
-          <span class="when">5 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-04-2010Z.html">2026-07-04-2010Z</a>
-          <span class="when">5 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-04-0924Z.html">2026-07-04-0924Z</a>
-          <span class="when">4 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-04-0437Z.html">2026-07-04-0437Z</a>
-          <span class="when">4 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-03-2016Z.html">2026-07-03-2016Z</a>
-          <span class="when">4 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-03-1006Z.html">2026-07-03-1006Z</a>
-          <span class="when">3 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-03-0444Z.html">2026-07-03-0444Z</a>
-          <span class="when">3 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-02-2020Z.html">2026-07-02-2020Z</a>
-          <span class="when">3 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-02-1011Z.html">2026-07-02-1011Z</a>
-          <span class="when">2 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-02-0459Z.html">2026-07-02-0459Z</a>
-          <span class="when">2 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-01-2048Z.html">2026-07-01-2048Z</a>
-          <span class="when">2 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-01-1043Z.html">2026-07-01-1043Z</a>
-          <span class="when">1 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-07-01-0523Z.html">2026-07-01-0523Z</a>
-          <span class="when">1 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-30-2057Z.html">2026-06-30-2057Z</a>
-          <span class="when">1 Jul 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-30-1032Z.html">2026-06-30-1032Z</a>
-          <span class="when">30 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-30-0506Z.html">2026-06-30-0506Z</a>
-          <span class="when">30 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-29-2049Z.html">2026-06-29-2049Z</a>
-          <span class="when">30 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-29-1201Z.html">2026-06-29-1201Z</a>
-          <span class="when">29 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-29-0552Z.html">2026-06-29-0552Z</a>
-          <span class="when">29 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-28-2015Z.html">2026-06-28-2015Z</a>
-          <span class="when">29 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-28-1001Z.html">2026-06-28-1001Z</a>
-          <span class="when">28 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-28-0519Z.html">2026-06-28-0519Z</a>
-          <span class="when">28 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-27-2009Z.html">2026-06-27-2009Z</a>
-          <span class="when">28 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-27-0930Z.html">2026-06-27-0930Z</a>
-          <span class="when">27 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-27-0455Z.html">2026-06-27-0455Z</a>
-          <span class="when">27 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-26-2048Z.html">2026-06-26-2048Z</a>
-          <span class="when">27 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-26-1024Z.html">2026-06-26-1024Z</a>
-          <span class="when">26 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-26-0510Z.html">2026-06-26-0510Z</a>
-          <span class="when">26 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-25-2058Z.html">2026-06-25-2058Z</a>
-          <span class="when">26 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-25-1016Z.html">2026-06-25-1016Z</a>
-          <span class="when">25 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-25-0507Z.html">2026-06-25-0507Z</a>
-          <span class="when">25 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-24-2049Z.html">2026-06-24-2049Z</a>
-          <span class="when">25 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-24-1023Z.html">2026-06-24-1023Z</a>
-          <span class="when">24 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-24-0503Z.html">2026-06-24-0503Z</a>
-          <span class="when">24 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-23-2101Z.html">2026-06-23-2101Z</a>
-          <span class="when">24 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-23-1037Z.html">2026-06-23-1037Z</a>
-          <span class="when">23 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-23-0503Z.html">2026-06-23-0503Z</a>
-          <span class="when">23 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-22-2132Z.html">2026-06-22-2132Z</a>
-          <span class="when">23 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-22-1251Z.html">2026-06-22-1251Z</a>
-          <span class="when">22 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-22-0631Z.html">2026-06-22-0631Z</a>
-          <span class="when">22 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-21-2026Z.html">2026-06-21-2026Z</a>
-          <span class="when">22 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-21-1032Z.html">2026-06-21-1032Z</a>
-          <span class="when">21 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-21-0605Z.html">2026-06-21-0605Z</a>
-          <span class="when">21 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-20-2017Z.html">2026-06-20-2017Z</a>
-          <span class="when">21 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-20-1009Z.html">2026-06-20-1009Z</a>
-          <span class="when">20 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-20-0517Z.html">2026-06-20-0517Z</a>
-          <span class="when">20 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-19-2026Z.html">2026-06-19-2026Z</a>
-          <span class="when">20 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-19-1125Z.html">2026-06-19-1125Z</a>
-          <span class="when">19 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-19-0622Z.html">2026-06-19-0622Z</a>
-          <span class="when">19 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-18-2122Z.html">2026-06-18-2122Z</a>
-          <span class="when">19 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-18-1110Z.html">2026-06-18-1110Z</a>
-          <span class="when">18 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-18-0557Z.html">2026-06-18-0557Z</a>
-          <span class="when">18 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-17-2110Z.html">2026-06-17-2110Z</a>
-          <span class="when">18 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-17-1150Z.html">2026-06-17-1150Z</a>
-          <span class="when">17 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-17-0616Z.html">2026-06-17-0616Z</a>
-          <span class="when">17 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-16-2142Z.html">2026-06-16-2142Z</a>
-          <span class="when">17 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-16-1213Z.html">2026-06-16-1213Z</a>
-          <span class="when">16 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-16-0635Z.html">2026-06-16-0635Z</a>
-          <span class="when">16 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-15-2145Z.html">2026-06-15-2145Z</a>
-          <span class="when">16 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-15-1318Z.html">2026-06-15-1318Z</a>
-          <span class="when">15 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-15-0627Z.html">2026-06-15-0627Z</a>
-          <span class="when">15 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-14-2020Z.html">2026-06-14-2020Z</a>
-          <span class="when">15 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-14-1026Z.html">2026-06-14-1026Z</a>
-          <span class="when">14 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-14-0551Z.html">2026-06-06-0551Z</a>
-          <span class="when">14 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-13-2017Z.html">2026-06-13-2017Z</a>
-          <span class="when">14 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-13-0957Z.html">2026-06-13-0957Z</a>
-          <span class="when">13 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-13-0522Z.html">2026-06-13-0522Z</a>
-          <span class="when">13 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-12-2102Z.html">2026-06-12-2102Z</a>
-          <span class="when">13 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-12-1103Z.html">2026-06-12-1103Z</a>
-          <span class="when">12 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-12-0550Z.html">2026-06-12-0550Z</a>
-          <span class="when">12 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-11-2123Z.html">2026-06-11-2123Z</a>
-          <span class="when">12 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-11-1123Z.html">2026-06-11-1123Z</a>
-          <span class="when">11 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-11-0551Z.html">2026-06-11-0551Z</a>
-          <span class="when">11 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-10-2126Z.html">2026-06-10-2126Z</a>
-          <span class="when">11 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-10-1057Z.html">2026-06-10-1057Z</a>
-          <span class="when">10 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-10-0521Z.html">2026-06-10-0521Z</a>
-          <span class="when">10 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-09-2100Z.html">2026-06-09-2100Z</a>
-          <span class="when">10 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-09-1035Z.html">2026-06-09-1035Z</a>
-          <span class="when">9 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-09-0509Z.html">2026-06-09-0509Z</a>
-          <span class="when">9 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-08-2111Z.html">2026-06-08-2111Z</a>
-          <span class="when">9 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-08-1200Z.html">2026-06-08-1200Z</a>
-          <span class="when">8 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-08-0552Z.html">2026-06-08-0552Z</a>
-          <span class="when">8 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-07-2014Z.html">2026-06-07-2014Z</a>
-          <span class="when">8 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-07-1006Z.html">2026-06-07-1006Z</a>
-          <span class="when">7 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-07-0813Z.html">2026-06-07-0813Z</a>
-          <span class="when">7 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-07-0524Z.html">2026-06-07-0524Z</a>
-          <span class="when">7 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-06-2038Z.html">2026-06-06-2038Z</a>
-          <span class="when">7 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-06-2011Z.html">2026-06-06-2011Z</a>
-          <span class="when">7 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-06-1112Z.html">2026-06-06-1112Z</a>
-          <span class="when">6 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-06-1104Z.html">2026-06-06-1104Z</a>
-          <span class="when">6 Jun 2026</span>
-        </li>
-        <li>
-          <a href="2026-06-06-1049Z.html">2026-06-06-1049Z</a>
-          <span class="when">6 Jun 2026</span>
-        </li>
+        <li><a href="index.html">2026-09-10-0541Z</a><span class="when">10 Sep 2026, 5:41PM NZST (current)</span></li>
+        <li><a href="2026-09-09-2131Z.html">2026-09-09-2131Z</a><span class="when">10 Sep 2026, 9:31AM NZST</span></li>
+        <li><a href="2026-09-09-1212Z.html">2026-09-09-1212Z</a><span class="when">10 Sep 2026, 12:12AM NZST</span></li>
+        <li><a href="2026-09-09-0547Z.html">2026-09-09-0547Z</a><span class="when">9 Sep 2026, 5:47PM NZST</span></li>
+        <li><a href="2026-09-08-2139Z.html">2026-09-08-2139Z</a><span class="when">9 Sep 2026, 9:39AM NZST</span></li>
+        <li><a href="2026-09-08-1201Z.html">2026-09-08-1201Z</a><span class="when">9 Sep 2026, 12:01AM NZST</span></li>
+        <li><a href="2026-09-08-0541Z.html">2026-09-08-0541Z</a><span class="when">8 Sep 2026, 5:41PM NZST</span></li>
+        <li><a href="2026-09-07-2155Z.html">2026-09-07-2155Z</a><span class="when">8 Sep 2026, 9:55AM NZST</span></li>
+        <li><a href="2026-09-07-1320Z.html">2026-09-07-1320Z</a><span class="when">8 Sep 2026, 1:20AM NZST</span></li>
+        <li><a href="2026-09-07-0548Z.html">2026-09-07-0548Z</a><span class="when">7 Sep 2026, 5:48PM NZST</span></li>
+        <li><a href="2026-09-06-2107Z.html">2026-09-06-2107Z</a><span class="when">7 Sep 2026, 9:07AM NZST</span></li>
+        <li><a href="2026-09-06-1133Z.html">2026-09-06-1133Z</a><span class="when">7 Sep 2026, 1:33AM NZST</span></li>
+        <li><a href="2026-09-06-0538Z.html">2026-09-06-0538Z</a><span class="when">6 Sep 2026, 5:38PM NZST</span></li>
+        <li><a href="2026-09-05-2059Z.html">2026-09-05-2059Z</a><span class="when">6 Sep 2026, 8:59AM NZST</span></li>
+        <li><a href="2026-09-05-1110Z.html">2026-09-05-1110Z</a><span class="when">5 Sep 2026, 11:10PM NZST</span></li>
+        <li><a href="2026-09-05-0522Z.html">2026-09-05-0522Z</a><span class="when">5 Sep 2026, 5:22PM NZST</span></li>
+        <li><a href="2026-09-04-0537Z.html">2026-09-04-0537Z</a><span class="when">4 Sep 2026, 5:37PM NZST</span></li>
+        <li><a href="2026-09-03-2135Z.html">2026-09-03-2135Z</a><span class="when">4 Sep 2026, 9:35AM NZST</span></li>
+        <li><a href="2026-09-03-1159Z.html">2026-09-03-1159Z</a><span class="when">3 Sep 2026, 11:59PM NZST</span></li>
+        <li><a href="2026-09-03-0532Z.html">2026-09-03-0532Z</a><span class="when">3 Sep 2026, 5:32PM NZST</span></li>
+        <li><a href="2026-09-02-2137Z.html">2026-09-02-2137Z</a><span class="when">3 Sep 2026, 9:37AM NZST</span></li>
+        <li><a href="2026-09-02-1159Z.html">2026-09-02-1159Z</a><span class="when">2 Sep 2026, 11:59PM NZST</span></li>
+        <li><a href="2026-09-02-0531Z.html">2026-09-02-0531Z</a><span class="when">2 Sep 2026, 5:31PM NZST</span></li>
+        <li><a href="2026-09-01-2138Z.html">2026-09-01-2138Z</a><span class="when">2 Sep 2026, 9:38AM NZST</span></li>
+        <li><a href="2026-09-01-1225Z.html">2026-09-01-1225Z</a><span class="when">1 Sep 2026, 12:25AM NZST</span></li>
+        <li><a href="2026-09-01-0606Z.html">2026-09-01-0606Z</a><span class="when">1 Sep 2026, 6:06PM NZST</span></li>
+        <li><a href="2026-08-31-2308Z.html">2026-08-31-2308Z</a><span class="when">1 Sep 2026, 11:08AM NZST</span></li>
+        <li><a href="2026-08-31-1455Z.html">2026-08-31-1455Z</a><span class="when">1 Sep 2026, 2:55AM NZST</span></li>
+        <li><a href="2026-08-31-0646Z.html">2026-08-31-0646Z</a><span class="when">31 Aug 2026, 6:46PM NZST</span></li>
+        <li><a href="2026-08-30-2150Z.html">2026-08-30-2150Z</a><span class="when">31 Aug 2026, 9:50AM NZST</span></li>
+        <li><a href="2026-08-30-1239Z.html">2026-08-30-1239Z</a><span class="when">31 Aug 2026, 12:39AM NZST</span></li>
+        <li><a href="2026-08-30-0619Z.html">2026-08-30-0619Z</a><span class="when">30 Aug 2026, 6:19PM NZST</span></li>
+        <li><a href="2026-08-29-2132Z.html">2026-08-29-2132Z</a><span class="when">30 Aug 2026, 9:32AM NZST</span></li>
+        <li><a href="2026-08-29-0742Z.html">2026-08-29-0742Z</a><span class="when">29 Aug 2026, 7:42PM NZST</span></li>
+        <li><a href="2026-08-28-1918Z.html">2026-08-28-1918Z</a><span class="when">29 Aug 2026, 7:18AM NZST</span></li>
+        <li><a href="2026-08-28-0226Z.html">2026-08-28-0226Z</a><span class="when">28 Aug 2026, 2:26PM NZST</span></li>
+        <li><a href="2026-08-27-1059Z.html">2026-08-27-1059Z</a><span class="when">27 Aug 2026, 10:59PM NZST</span></li>
+        <li><a href="2026-08-26-2142Z.html">2026-08-26-2142Z</a><span class="when">27 Aug 2026, 9:42AM NZST</span></li>
+        <li><a href="2026-08-26-0748Z.html">2026-08-26-0748Z</a><span class="when">26 Aug 2026, 7:48PM NZST</span></li>
+        <li><a href="2026-08-26-0224Z.html">2026-08-26-0224Z</a><span class="when">26 Aug 2026, 2:24PM NZST</span></li>
+        <li><a href="2026-08-25-1933Z.html">2026-08-25-1933Z</a><span class="when">26 Aug 2026, 7:33AM NZST</span></li>
+        <li><a href="2026-08-25-0745Z.html">2026-08-25-0745Z</a><span class="when">25 Aug 2026, 7:45PM NZST</span></li>
+        <li><a href="2026-08-25-0218Z.html">2026-08-25-0218Z</a><span class="when">25 Aug 2026, 2:18PM NZST</span></li>
+        <li><a href="2026-08-24-1931Z.html">2026-08-24-1931Z</a><span class="when">25 Aug 2026, 7:31AM NZST</span></li>
+        <li><a href="2026-08-24-0758Z.html">2026-08-24-0758Z</a><span class="when">24 Aug 2026, 7:58PM NZST</span></li>
+        <li><a href="2026-08-24-0222Z.html">2026-08-24-0222Z</a><span class="when">24 Aug 2026, 2:22PM NZST</span></li>
+        <li><a href="2026-08-23-1922Z.html">2026-08-23-1922Z</a><span class="when">24 Aug 2026, 7:22AM NZST</span></li>
+        <li><a href="2026-08-23-0734Z.html">2026-08-23-0734Z</a><span class="when">23 Aug 2026, 7:34PM NZST</span></li>
+        <li><a href="2026-08-23-0223Z.html">2026-08-23-0223Z</a><span class="when">23 Aug 2026, 2:23PM NZST</span></li>
+        <li><a href="2026-08-22-1923Z.html">2026-08-22-1923Z</a><span class="when">23 Aug 2026, 7:23AM NZST</span></li>
+        <li><a href="2026-08-22-0733Z.html">2026-08-22-0733Z</a><span class="when">22 Aug 2026, 7:33PM NZST</span></li>
+        <li><a href="2026-08-22-0215Z.html">2026-08-22-0215Z</a><span class="when">22 Aug 2026, 2:15PM NZST</span></li>
+        <li><a href="2026-08-21-1927Z.html">2026-08-21-1927Z</a><span class="when">22 Aug 2026, 7:27AM NZST</span></li>
+        <li><a href="2026-08-21-0744Z.html">2026-08-21-0744Z</a><span class="when">21 Aug 2026, 7:44PM NZST</span></li>
+        <li><a href="2026-08-21-0223Z.html">2026-08-21-0223Z</a><span class="when">21 Aug 2026, 2:23PM NZST</span></li>
+        <li><a href="2026-08-20-1932Z.html">2026-08-20-1932Z</a><span class="when">21 Aug 2026, 7:32AM NZST</span></li>
+        <li><a href="2026-08-20-0742Z.html">2026-08-20-0742Z</a><span class="when">20 Aug 2026, 7:42PM NZST</span></li>
+        <li><a href="2026-08-20-0217Z.html">2026-08-20-0217Z</a><span class="when">20 Aug 2026, 2:17PM NZST</span></li>
+        <li><a href="2026-08-19-1927Z.html">2026-08-19-1927Z</a><span class="when">20 Aug 2026, 7:27AM NZST</span></li>
+        <li><a href="2026-08-19-0218Z.html">2026-08-19-0218Z</a><span class="when">19 Aug 2026, 2:18PM NZST</span></li>
+        <li><a href="2026-08-18-1928Z.html">2026-08-18-1928Z</a><span class="when">19 Aug 2026, 7:28AM NZST</span></li>
+        <li><a href="2026-08-18-0739Z.html">2026-08-18-0739Z</a><span class="when">18 Aug 2026, 7:39PM NZST</span></li>
+        <li><a href="2026-08-18-0216Z.html">2026-08-18-0216Z</a><span class="when">18 Aug 2026, 2:16PM NZST</span></li>
+        <li><a href="2026-08-17-1929Z.html">2026-08-17-1929Z</a><span class="when">18 Aug 2026, 7:29AM NZST</span></li>
+        <li><a href="2026-08-17-0753Z.html">2026-08-17-0753Z</a><span class="when">17 Aug 2026, 7:53PM NZST</span></li>
+        <li><a href="2026-08-17-0220Z.html">2026-08-17-0220Z</a><span class="when">17 Aug 2026, 2:20PM NZST</span></li>
+        <li><a href="2026-08-16-0732Z.html">2026-08-16-0732Z</a><span class="when">16 Aug 2026, 7:32PM NZST</span></li>
+        <li><a href="2026-08-16-0221Z.html">2026-08-16-0221Z</a><span class="when">16 Aug 2026, 2:21PM NZST</span></li>
+        <li><a href="2026-08-15-1922Z.html">2026-08-15-1922Z</a><span class="when">16 Aug 2026, 7:22AM NZST</span></li>
+        <li><a href="2026-08-15-0732Z.html">2026-08-15-0732Z</a><span class="when">15 Aug 2026, 7:32PM NZST</span></li>
+        <li><a href="2026-08-14-1949Z.html">2026-08-14-1949Z</a><span class="when">15 Aug 2026, 7:49AM NZST</span></li>
+        <li><a href="2026-08-14-0817Z.html">2026-08-14-0817Z</a><span class="when">14 Aug 2026, 8:17PM NZST</span></li>
+        <li><a href="2026-08-13-1955Z.html">2026-08-13-1955Z</a><span class="when">14 Aug 2026, 7:55AM NZST</span></li>
+        <li><a href="2026-08-13-0822Z.html">2026-08-13-0822Z</a><span class="when">13 Aug 2026, 8:22PM NZST</span></li>
+        <li><a href="2026-08-13-0327Z.html">2026-08-13-0327Z</a><span class="when">13 Aug 2026, 3:27PM NZST</span></li>
+        <li><a href="2026-08-12-2000Z.html">2026-08-12-2000Z</a><span class="when">13 Aug 2026, 8:00AM NZST</span></li>
+        <li><a href="2026-08-12-0323Z.html">2026-08-12-0323Z</a><span class="when">12 Aug 2026, 3:23PM NZST</span></li>
+        <li><a href="2026-08-11-1959Z.html">2026-08-11-1959Z</a><span class="when">12 Aug 2026, 7:59AM NZST</span></li>
+        <li><a href="2026-08-11-0809Z.html">2026-08-11-0809Z</a><span class="when">11 Aug 2026, 8:09PM NZST</span></li>
+        <li><a href="2026-08-11-0304Z.html">2026-08-11-0304Z</a><span class="when">11 Aug 2026, 3:04PM NZST</span></li>
+        <li><a href="2026-08-10-1955Z.html">2026-08-10-1955Z</a><span class="when">11 Aug 2026, 7:55AM NZST</span></li>
+        <li><a href="2026-08-10-0840Z.html">2026-08-10-0840Z</a><span class="when">10 Aug 2026, 8:40PM NZST</span></li>
+        <li><a href="2026-08-10-0311Z.html">2026-08-10-0311Z</a><span class="when">10 Aug 2026, 3:11PM NZST</span></li>
+        <li><a href="2026-08-09-1935Z.html">2026-08-09-1935Z</a><span class="when">10 Aug 2026, 7:35AM NZST</span></li>
+        <li><a href="2026-08-09-0754Z.html">2026-08-09-0754Z</a><span class="when">9 Aug 2026, 7:54PM NZST</span></li>
+        <li><a href="2026-08-09-0302Z.html">2026-08-09-0302Z</a><span class="when">9 Aug 2026, 3:02PM NZST</span></li>
+        <li><a href="2026-08-08-1931Z.html">2026-08-08-1931Z</a><span class="when">9 Aug 2026, 7:31AM NZST</span></li>
+        <li><a href="2026-08-08-0750Z.html">2026-08-08-0750Z</a><span class="when">8 Aug 2026, 7:50PM NZST</span></li>
+        <li><a href="2026-08-08-0255Z.html">2026-08-08-0255Z</a><span class="when">8 Aug 2026, 2:55PM NZST</span></li>
+        <li><a href="2026-08-07-1952Z.html">2026-08-07-1952Z</a><span class="when">8 Aug 2026, 7:52AM NZST</span></li>
+        <li><a href="2026-08-07-0815Z.html">2026-08-07-0815Z</a><span class="when">7 Aug 2026, 8:15PM NZST</span></li>
+        <li><a href="2026-08-07-0350Z.html">2026-08-07-0350Z</a><span class="when">7 Aug 2026, 3:50PM NZST</span></li>
+        <li><a href="2026-08-07-0041Z.html">2026-08-07-0041Z</a><span class="when">7 Aug 2026, 12:41PM NZST</span></li>
+        <li><a href="2026-08-06-0941Z.html">2026-08-06-0941Z</a><span class="when">6 Aug 2026, 9:41PM NZST</span></li>
+        <li><a href="2026-08-06-0414Z.html">2026-08-06-0414Z</a><span class="when">6 Aug 2026, 4:14PM NZST</span></li>
+        <li><a href="2026-08-05-2027Z.html">2026-08-05-2027Z</a><span class="when">6 Aug 2026, 8:27AM NZST</span></li>
+        <li><a href="2026-08-05-0938Z.html">2026-08-05-0938Z</a><span class="when">5 Aug 2026, 9:38PM NZST</span></li>
+        <li><a href="2026-08-05-0411Z.html">2026-08-05-0411Z</a><span class="when">5 Aug 2026, 4:11PM NZST</span></li>
+        <li><a href="2026-08-04-2026Z.html">2026-08-04-2026Z</a><span class="when">5 Aug 2026, 8:26AM NZST</span></li>
+        <li><a href="2026-08-04-0939Z.html">2026-08-04-0939Z</a><span class="when">4 Aug 2026, 9:39PM NZST</span></li>
+        <li><a href="2026-08-04-0415Z.html">2026-08-04-0415Z</a><span class="when">4 Aug 2026, 4:15PM NZST</span></li>
+        <li><a href="2026-08-03-2027Z.html">2026-08-03-2027Z</a><span class="when">4 Aug 2026, 8:27AM NZST</span></li>
+        <li><a href="2026-08-03-1044Z.html">2026-08-03-1044Z</a><span class="when">3 Aug 2026, 10:44PM NZST</span></li>
+        <li><a href="2026-08-03-0431Z.html">2026-08-03-0431Z</a><span class="when">3 Aug 2026, 4:31PM NZST</span></li>
+        <li><a href="2026-08-02-2011Z.html">2026-08-02-2011Z</a><span class="when">3 Aug 2026, 8:11AM NZST</span></li>
+        <li><a href="2026-08-02-0910Z.html">2026-08-02-0910Z</a><span class="when">2 Aug 2026, 9:10PM NZST</span></li>
+        <li><a href="2026-08-02-0424Z.html">2026-08-02-0424Z</a><span class="when">2 Aug 2026, 4:24PM NZST</span></li>
+        <li><a href="2026-08-01-2010Z.html">2026-08-01-2010Z</a><span class="when">2 Aug 2026, 8:10AM NZST</span></li>
+        <li><a href="2026-08-01-0907Z.html">2026-08-01-0907Z</a><span class="when">1 Aug 2026, 9:07PM NZST</span></li>
+        <li><a href="2026-08-01-0422Z.html">2026-08-01-0422Z</a><span class="when">1 Aug 2026, 4:22PM NZST</span></li>
+        <li><a href="2026-07-31-2021Z.html">2026-07-31-2021Z</a><span class="when">1 Aug 2026, 8:21AM NZST</span></li>
+        <li><a href="2026-07-31-0946Z.html">2026-07-31-0946Z</a><span class="when">31 Jul 2026, 9:46PM NZST</span></li>
+        <li><a href="2026-07-31-0424Z.html">2026-07-31-0424Z</a><span class="when">31 Jul 2026, 4:24PM NZST</span></li>
+        <li><a href="2026-07-30-2015Z.html">2026-07-30-2015Z</a><span class="when">31 Jul 2026, 8:15AM NZST</span></li>
+        <li><a href="2026-07-30-0932Z.html">2026-07-30-0932Z</a><span class="when">30 Jul 2026, 9:32PM NZST</span></li>
+        <li><a href="2026-07-30-0407Z.html">2026-07-30-0407Z</a><span class="when">30 Jul 2026, 4:07PM NZST</span></li>
+        <li><a href="2026-07-29-2013Z.html">2026-07-29-2013Z</a><span class="when">30 Jul 2026, 8:13AM NZST</span></li>
+        <li><a href="2026-07-29-0939Z.html">2026-07-29-0939Z</a><span class="when">29 Jul 2026, 9:39PM NZST</span></li>
+        <li><a href="2026-07-29-0413Z.html">2026-07-29-0413Z</a><span class="when">29 Jul 2026, 4:13PM NZST</span></li>
+        <li><a href="2026-07-28-2017Z.html">2026-07-28-2017Z</a><span class="when">29 Jul 2026, 8:17AM NZST</span></li>
+        <li><a href="2026-07-28-0937Z.html">2026-07-28-0937Z</a><span class="when">28 Jul 2026, 9:37PM NZST</span></li>
+        <li><a href="2026-07-28-0412Z.html">2026-07-28-0412Z</a><span class="when">28 Jul 2026, 4:12PM NZST</span></li>
+        <li><a href="2026-07-27-2024Z.html">2026-07-27-2024Z</a><span class="when">28 Jul 2026, 8:24AM NZST</span></li>
+        <li><a href="2026-07-27-1044Z.html">2026-07-27-1044Z</a><span class="when">27 Jul 2026, 10:44PM NZST</span></li>
+        <li><a href="2026-07-27-0438Z.html">2026-07-27-0438Z</a><span class="when">27 Jul 2026, 4:38PM NZST</span></li>
+        <li><a href="2026-07-26-2010Z.html">2026-07-26-2010Z</a><span class="when">27 Jul 2026, 8:10AM NZST</span></li>
+        <li><a href="2026-07-26-0914Z.html">2026-07-26-0914Z</a><span class="when">26 Jul 2026, 9:14PM NZST</span></li>
+        <li><a href="2026-07-26-0427Z.html">2026-07-26-0427Z</a><span class="when">26 Jul 2026, 4:27PM NZST</span></li>
+        <li><a href="2026-07-25-2012Z.html">2026-07-25-2012Z</a><span class="when">26 Jul 2026, 8:12AM NZST</span></li>
+        <li><a href="2026-07-25-0901Z.html">2026-07-25-0901Z</a><span class="when">25 Jul 2026, 9:01PM NZST</span></li>
+        <li><a href="2026-07-25-0412Z.html">2026-07-25-0412Z</a><span class="when">25 Jul 2026, 4:12PM NZST</span></li>
+        <li><a href="2026-07-24-2021Z.html">2026-07-24-2021Z</a><span class="when">25 Jul 2026, 8:21AM NZST</span></li>
+        <li><a href="2026-07-24-0922Z.html">2026-07-24-0922Z</a><span class="when">24 Jul 2026, 9:22PM NZST</span></li>
+        <li><a href="2026-07-24-0416Z.html">2026-07-24-0416Z</a><span class="when">24 Jul 2026, 4:16PM NZST</span></li>
+        <li><a href="2026-07-23-2014Z.html">2026-07-23-2014Z</a><span class="when">24 Jul 2026, 8:14AM NZST</span></li>
+        <li><a href="2026-07-23-0925Z.html">2026-07-23-0925Z</a><span class="when">23 Jul 2026, 9:25PM NZST</span></li>
+        <li><a href="2026-07-23-0416Z.html">2026-07-23-0416Z</a><span class="when">23 Jul 2026, 4:16PM NZST</span></li>
+        <li><a href="2026-07-22-2012Z.html">2026-07-22-2012Z</a><span class="when">23 Jul 2026, 8:12AM NZST</span></li>
+        <li><a href="2026-07-22-0927Z.html">2026-07-22-0927Z</a><span class="when">22 Jul 2026, 9:27PM NZST</span></li>
+        <li><a href="2026-07-22-0418Z.html">2026-07-22-0418Z</a><span class="when">22 Jul 2026, 4:18PM NZST</span></li>
+        <li><a href="2026-07-21-2019Z.html">2026-07-21-2019Z</a><span class="when">22 Jul 2026, 8:19AM NZST</span></li>
+        <li><a href="2026-07-21-0928Z.html">2026-07-21-0928Z</a><span class="when">21 Jul 2026, 9:28PM NZST</span></li>
+        <li><a href="2026-07-21-0416Z.html">2026-07-21-0416Z</a><span class="when">21 Jul 2026, 4:16PM NZST</span></li>
+        <li><a href="2026-07-20-2022Z.html">2026-07-20-2022Z</a><span class="when">21 Jul 2026, 8:22AM NZST</span></li>
+        <li><a href="2026-07-20-1014Z.html">2026-07-20-1014Z</a><span class="when">20 Jul 2026, 10:14PM NZST</span></li>
+        <li><a href="2026-07-20-0436Z.html">2026-07-20-0436Z</a><span class="when">20 Jul 2026, 4:36PM NZST</span></li>
+        <li><a href="2026-07-19-2007Z.html">2026-07-19-2007Z</a><span class="when">20 Jul 2026, 8:07AM NZST</span></li>
+        <li><a href="2026-07-19-0905Z.html">2026-07-19-0905Z</a><span class="when">19 Jul 2026, 9:05PM NZST</span></li>
+        <li><a href="2026-07-19-0421Z.html">2026-07-19-0421Z</a><span class="when">19 Jul 2026, 4:21PM NZST</span></li>
+        <li><a href="2026-07-18-2004Z.html">2026-07-18-2004Z</a><span class="when">19 Jul 2026, 8:04AM NZST</span></li>
+        <li><a href="2026-07-18-0849Z.html">2026-07-18-0849Z</a><span class="when">18 Jul 2026, 8:49PM NZST</span></li>
+        <li><a href="2026-07-18-0356Z.html">2026-07-18-0356Z</a><span class="when">18 Jul 2026, 3:56PM NZST</span></li>
+        <li><a href="2026-07-17-2006Z.html">2026-07-17-2006Z</a><span class="when">18 Jul 2026, 8:06AM NZST</span></li>
+        <li><a href="2026-07-17-0911Z.html">2026-07-17-0911Z</a><span class="when">17 Jul 2026, 9:11PM NZST</span></li>
+        <li><a href="2026-07-17-0408Z.html">2026-07-17-0408Z</a><span class="when">17 Jul 2026, 4:08PM NZST</span></li>
+        <li><a href="2026-07-16-2003Z.html">2026-07-16-2003Z</a><span class="when">17 Jul 2026, 8:03AM NZST</span></li>
+        <li><a href="2026-07-16-0917Z.html">2026-07-16-0917Z</a><span class="when">16 Jul 2026, 9:17PM NZST</span></li>
+        <li><a href="2026-07-16-0409Z.html">2026-07-16-0409Z</a><span class="when">16 Jul 2026, 4:09PM NZST</span></li>
+        <li><a href="2026-07-15-2012Z.html">2026-07-15-2012Z</a><span class="when">16 Jul 2026, 8:12AM NZST</span></li>
+        <li><a href="2026-07-15-0910Z.html">2026-07-15-0910Z</a><span class="when">15 Jul 2026, 9:10PM NZST</span></li>
+        <li><a href="2026-07-15-0406Z.html">2026-07-15-0406Z</a><span class="when">15 Jul 2026, 4:06PM NZST</span></li>
+        <li><a href="2026-07-14-2014Z.html">2026-07-14-2014Z</a><span class="when">15 Jul 2026, 8:14AM NZST</span></li>
+        <li><a href="2026-07-14-0905Z.html">2026-07-14-0905Z</a><span class="when">14 Jul 2026, 9:05PM NZST</span></li>
+        <li><a href="2026-07-14-0357Z.html">2026-07-14-0357Z</a><span class="when">14 Jul 2026, 3:57PM NZST</span></li>
+        <li><a href="2026-07-13-2017Z.html">2026-07-13-2017Z</a><span class="when">14 Jul 2026, 8:17AM NZST</span></li>
+        <li><a href="2026-07-13-1029Z.html">2026-07-13-1029Z</a><span class="when">13 Jul 2026, 10:29PM NZST</span></li>
+        <li><a href="2026-07-13-0431Z.html">2026-07-13-0431Z</a><span class="when">13 Jul 2026, 4:31PM NZST</span></li>
+        <li><a href="2026-07-12-2006Z.html">2026-07-12-2006Z</a><span class="when">13 Jul 2026, 8:06AM NZST</span></li>
+        <li><a href="2026-07-12-0904Z.html">2026-07-12-0904Z</a><span class="when">12 Jul 2026, 9:04PM NZST</span></li>
+        <li><a href="2026-07-12-0426Z.html">2026-07-12-0426Z</a><span class="when">12 Jul 2026, 4:26PM NZST</span></li>
+        <li><a href="2026-07-11-2006Z.html">2026-07-11-2006Z</a><span class="when">12 Jul 2026, 8:06AM NZST</span></li>
+        <li><a href="2026-07-11-0849Z.html">2026-07-11-0849Z</a><span class="when">11 Jul 2026, 8:49PM NZST</span></li>
+        <li><a href="2026-07-11-0413Z.html">2026-07-11-0413Z</a><span class="when">11 Jul 2026, 4:13PM NZST</span></li>
+        <li><a href="2026-07-10-2025Z.html">2026-07-10-2025Z</a><span class="when">11 Jul 2026, 8:25AM NZST</span></li>
+        <li><a href="2026-07-10-1025Z.html">2026-07-10-1025Z</a><span class="when">10 Jul 2026, 10:25PM NZST</span></li>
+        <li><a href="2026-07-10-0453Z.html">2026-07-10-0453Z</a><span class="when">10 Jul 2026, 4:53PM NZST</span></li>
+        <li><a href="2026-07-09-2048Z.html">2026-07-09-2048Z</a><span class="when">10 Jul 2026, 8:48AM NZST</span></li>
+        <li><a href="2026-07-09-1026Z.html">2026-07-09-1026Z</a><span class="when">9 Jul 2026, 10:26PM NZST</span></li>
+        <li><a href="2026-07-09-0455Z.html">2026-07-09-0455Z</a><span class="when">9 Jul 2026, 4:55PM NZST</span></li>
+        <li><a href="2026-07-08-2022Z.html">2026-07-08-2022Z</a><span class="when">9 Jul 2026, 8:22AM NZST</span></li>
+        <li><a href="2026-07-08-0926Z.html">2026-07-08-0926Z</a><span class="when">8 Jul 2026, 9:26PM NZST</span></li>
+        <li><a href="2026-07-08-0415Z.html">2026-07-08-0415Z</a><span class="when">8 Jul 2026, 4:15PM NZST</span></li>
+        <li><a href="2026-07-07-2050Z.html">2026-07-07-2050Z</a><span class="when">8 Jul 2026, 8:50AM NZST</span></li>
+        <li><a href="2026-07-07-1027Z.html">2026-07-07-1027Z</a><span class="when">7 Jul 2026, 10:27PM NZST</span></li>
+        <li><a href="2026-07-07-0454Z.html">2026-07-07-0454Z</a><span class="when">7 Jul 2026, 4:54PM NZST</span></li>
+        <li><a href="2026-07-06-2053Z.html">2026-07-06-2053Z</a><span class="when">7 Jul 2026, 8:53AM NZST</span></li>
+        <li><a href="2026-07-06-1138Z.html">2026-07-06-1138Z</a><span class="when">6 Jul 2026, 11:38PM NZST</span></li>
+        <li><a href="2026-07-06-0514Z.html">2026-07-06-0514Z</a><span class="when">6 Jul 2026, 5:14PM NZST</span></li>
+        <li><a href="2026-07-05-2016Z.html">2026-07-05-2016Z</a><span class="when">6 Jul 2026, 8:16AM NZST</span></li>
+        <li><a href="2026-07-05-0943Z.html">2026-07-05-0943Z</a><span class="when">5 Jul 2026, 9:43PM NZST</span></li>
+        <li><a href="2026-07-05-0458Z.html">2026-07-05-0458Z</a><span class="when">5 Jul 2026, 4:58PM NZST</span></li>
+        <li><a href="2026-07-04-2010Z.html">2026-07-04-2010Z</a><span class="when">5 Jul 2026, 8:10AM NZST</span></li>
+        <li><a href="2026-07-04-0924Z.html">2026-07-04-0924Z</a><span class="when">4 Jul 2026, 9:24PM NZST</span></li>
+        <li><a href="2026-07-04-0437Z.html">2026-07-04-0437Z</a><span class="when">4 Jul 2026, 4:37PM NZST</span></li>
+        <li><a href="2026-07-03-2016Z.html">2026-07-03-2016Z</a><span class="when">4 Jul 2026, 8:16AM NZST</span></li>
+        <li><a href="2026-07-03-1006Z.html">2026-07-03-1006Z</a><span class="when">3 Jul 2026, 10:06PM NZST</span></li>
+        <li><a href="2026-07-03-0444Z.html">2026-07-03-0444Z</a><span class="when">3 Jul 2026, 4:44PM NZST</span></li>
+        <li><a href="2026-07-02-2020Z.html">2026-07-02-2020Z</a><span class="when">3 Jul 2026, 8:20AM NZST</span></li>
+        <li><a href="2026-07-02-1011Z.html">2026-07-02-1011Z</a><span class="when">2 Jul 2026, 10:11PM NZST</span></li>
+        <li><a href="2026-07-02-0459Z.html">2026-07-02-0459Z</a><span class="when">2 Jul 2026, 4:59PM NZST</span></li>
+        <li><a href="2026-07-01-2048Z.html">2026-07-01-2048Z</a><span class="when">2 Jul 2026, 8:48AM NZST</span></li>
+        <li><a href="2026-07-01-1043Z.html">2026-07-01-1043Z</a><span class="when">1 Jul 2026, 10:43PM NZST</span></li>
+        <li><a href="2026-07-01-0523Z.html">2026-07-01-0523Z</a><span class="when">1 Jul 2026, 5:23PM NZST</span></li>
+        <li><a href="2026-06-30-2057Z.html">2026-06-30-2057Z</a><span class="when">1 Jul 2026, 8:57AM NZST</span></li>
+        <li><a href="2026-06-30-1032Z.html">2026-06-30-1032Z</a><span class="when">30 Jun 2026, 10:32PM NZST</span></li>
+        <li><a href="2026-06-30-0506Z.html">2026-06-30-0506Z</a><span class="when">30 Jun 2026, 5:06PM NZST</span></li>
+        <li><a href="2026-06-29-2049Z.html">2026-06-29-2049Z</a><span class="when">30 Jun 2026, 8:49AM NZST</span></li>
+        <li><a href="2026-06-29-1201Z.html">2026-06-29-1201Z</a><span class="when">29 Jun 2026, 12:01AM NZST</span></li>
+        <li><a href="2026-06-29-0552Z.html">2026-06-29-0552Z</a><span class="when">29 Jun 2026, 5:52PM NZST</span></li>
+        <li><a href="2026-06-28-2015Z.html">2026-06-28-2015Z</a><span class="when">29 Jun 2026, 8:15AM NZST</span></li>
+        <li><a href="2026-06-28-1001Z.html">2026-06-28-1001Z</a><span class="when">28 Jun 2026, 10:01PM NZST</span></li>
+        <li><a href="2026-06-28-0519Z.html">2026-06-28-0519Z</a><span class="when">28 Jun 2026, 5:19PM NZST</span></li>
+        <li><a href="2026-06-27-2009Z.html">2026-06-27-2009Z</a><span class="when">28 Jun 2026, 8:09AM NZST</span></li>
+        <li><a href="2026-06-27-0930Z.html">2026-06-27-0930Z</a><span class="when">27 Jun 2026, 9:30PM NZST</span></li>
+        <li><a href="2026-06-27-0455Z.html">2026-06-27-0455Z</a><span class="when">27 Jun 2026, 4:55PM NZST</span></li>
+        <li><a href="2026-06-26-2048Z.html">2026-06-26-2048Z</a><span class="when">27 Jun 2026, 8:48AM NZST</span></li>
+        <li><a href="2026-06-26-1024Z.html">2026-06-26-1024Z</a><span class="when">26 Jun 2026, 10:24PM NZST</span></li>
+        <li><a href="2026-06-26-0510Z.html">2026-06-26-0510Z</a><span class="when">26 Jun 2026, 5:10PM NZST</span></li>
+        <li><a href="2026-06-25-2058Z.html">2026-06-25-2058Z</a><span class="when">26 Jun 2026, 8:58AM NZST</span></li>
+        <li><a href="2026-06-25-1016Z.html">2026-06-25-1016Z</a><span class="when">25 Jun 2026, 10:16PM NZST</span></li>
+        <li><a href="2026-06-25-0507Z.html">2026-06-25-0507Z</a><span class="when">25 Jun 2026, 5:07PM NZST</span></li>
+        <li><a href="2026-06-24-2049Z.html">2026-06-24-2049Z</a><span class="when">25 Jun 2026, 8:49AM NZST</span></li>
+        <li><a href="2026-06-24-1023Z.html">2026-06-24-1023Z</a><span class="when">24 Jun 2026, 10:23PM NZST</span></li>
+        <li><a href="2026-06-24-0503Z.html">2026-06-24-0503Z</a><span class="when">24 Jun 2026, 5:03PM NZST</span></li>
+        <li><a href="2026-06-23-2101Z.html">2026-06-23-2101Z</a><span class="when">24 Jun 2026, 9:01AM NZST</span></li>
+        <li><a href="2026-06-23-1037Z.html">2026-06-23-1037Z</a><span class="when">23 Jun 2026, 10:37PM NZST</span></li>
+        <li><a href="2026-06-23-0503Z.html">2026-06-23-0503Z</a><span class="when">23 Jun 2026, 5:03PM NZST</span></li>
+        <li><a href="2026-06-22-2132Z.html">2026-06-22-2132Z</a><span class="when">23 Jun 2026, 9:32AM NZST</span></li>
+        <li><a href="2026-06-22-1251Z.html">2026-06-22-1251Z</a><span class="when">22 Jun 2026, 12:51AM NZST</span></li>
+        <li><a href="2026-06-22-0631Z.html">2026-06-22-0631Z</a><span class="when">22 Jun 2026, 6:31PM NZST</span></li>
+        <li><a href="2026-06-21-2026Z.html">2026-06-21-2026Z</a><span class="when">22 Jun 2026, 8:26AM NZST</span></li>
+        <li><a href="2026-06-21-1032Z.html">2026-06-21-1032Z</a><span class="when">21 Jun 2026, 10:32PM NZST</span></li>
+        <li><a href="2026-06-21-0605Z.html">2026-06-21-0605Z</a><span class="when">21 Jun 2026, 6:05PM NZST</span></li>
+        <li><a href="2026-06-20-2017Z.html">2026-06-20-2017Z</a><span class="when">21 Jun 2026, 8:17AM NZST</span></li>
+        <li><a href="2026-06-20-1009Z.html">2026-06-20-1009Z</a><span class="when">20 Jun 2026, 10:09PM NZST</span></li>
+        <li><a href="2026-06-20-0517Z.html">2026-06-20-0517Z</a><span class="when">20 Jun 2026, 5:17PM NZST</span></li>
+        <li><a href="2026-06-19-2026Z.html">2026-06-19-2026Z</a><span class="when">20 Jun 2026, 8:26AM NZST</span></li>
+        <li><a href="2026-06-19-1125Z.html">2026-06-19-1125Z</a><span class="when">19 Jun 2026, 11:25PM NZST</span></li>
+        <li><a href="2026-06-19-0622Z.html">2026-06-19-0622Z</a><span class="when">19 Jun 2026, 6:22PM NZST</span></li>
+        <li><a href="2026-06-18-2122Z.html">2026-06-18-2122Z</a><span class="when">19 Jun 2026, 9:22AM NZST</span></li>
+        <li><a href="2026-06-18-1110Z.html">2026-06-18-1110Z</a><span class="when">18 Jun 2026, 11:10PM NZST</span></li>
+        <li><a href="2026-06-18-0557Z.html">2026-06-18-0557Z</a><span class="when">18 Jun 2026, 5:57PM NZST</span></li>
+        <li><a href="2026-06-17-2110Z.html">2026-06-17-2110Z</a><span class="when">18 Jun 2026, 9:10AM NZST</span></li>
+        <li><a href="2026-06-17-1150Z.html">2026-06-17-1150Z</a><span class="when">17 Jun 2026, 11:50PM NZST</span></li>
+        <li><a href="2026-06-17-0616Z.html">2026-06-17-0616Z</a><span class="when">17 Jun 2026, 6:16PM NZST</span></li>
+        <li><a href="2026-06-16-2142Z.html">2026-06-16-2142Z</a><span class="when">17 Jun 2026, 9:42AM NZST</span></li>
+        <li><a href="2026-06-16-1213Z.html">2026-06-16-1213Z</a><span class="when">16 Jun 2026, 12:13AM NZST</span></li>
+        <li><a href="2026-06-16-0635Z.html">2026-06-16-0635Z</a><span class="when">16 Jun 2026, 6:35PM NZST</span></li>
+        <li><a href="2026-06-15-2145Z.html">2026-06-15-2145Z</a><span class="when">16 Jun 2026, 9:45AM NZST</span></li>
+        <li><a href="2026-06-15-1318Z.html">2026-06-15-1318Z</a><span class="when">15 Jun 2026, 1:18AM NZST</span></li>
+        <li><a href="2026-06-15-0627Z.html">2026-06-15-0627Z</a><span class="when">15 Jun 2026, 6:27PM NZST</span></li>
+        <li><a href="2026-06-14-2020Z.html">2026-06-14-2020Z</a><span class="when">15 Jun 2026, 8:20AM NZST</span></li>
+        <li><a href="2026-06-14-1026Z.html">2026-06-14-1026Z</a><span class="when">14 Jun 2026, 10:26PM NZST</span></li>
+        <li><a href="2026-06-14-0551Z.html">2026-06-14-0551Z</a><span class="when">14 Jun 2026, 5:51PM NZST</span></li>
+        <li><a href="2026-06-13-2017Z.html">2026-06-13-2017Z</a><span class="when">14 Jun 2026, 8:17AM NZST</span></li>
+        <li><a href="2026-06-13-0957Z.html">2026-06-13-0957Z</a><span class="when">13 Jun 2026, 9:57PM NZST</span></li>
+        <li><a href="2026-06-13-0522Z.html">2026-06-13-0522Z</a><span class="when">13 Jun 2026, 5:22PM NZST</span></li>
+        <li><a href="2026-06-12-2102Z.html">2026-06-12-2102Z</a><span class="when">13 Jun 2026, 9:02AM NZST</span></li>
+        <li><a href="2026-06-12-1103Z.html">2026-06-12-1103Z</a><span class="when">12 Jun 2026, 11:03PM NZST</span></li>
+        <li><a href="2026-06-12-0550Z.html">2026-06-12-0550Z</a><span class="when">12 Jun 2026, 5:50PM NZST</span></li>
+        <li><a href="2026-06-11-2123Z.html">2026-06-11-2123Z</a><span class="when">12 Jun 2026, 9:23AM NZST</span></li>
+        <li><a href="2026-06-11-1123Z.html">2026-06-11-1123Z</a><span class="when">11 Jun 2026, 11:23PM NZST</span></li>
+        <li><a href="2026-06-11-0551Z.html">2026-06-11-0551Z</a><span class="when">11 Jun 2026, 5:51PM NZST</span></li>
+        <li><a href="2026-06-10-2126Z.html">2026-06-10-2126Z</a><span class="when">11 Jun 2026, 9:26AM NZST</span></li>
+        <li><a href="2026-06-10-1057Z.html">2026-06-10-1057Z</a><span class="when">10 Jun 2026, 10:57PM NZST</span></li>
+        <li><a href="2026-06-10-0521Z.html">2026-06-10-0521Z</a><span class="when">10 Jun 2026, 5:21PM NZST</span></li>
+        <li><a href="2026-06-09-2100Z.html">2026-06-09-2100Z</a><span class="when">10 Jun 2026, 9:00AM NZST</span></li>
+        <li><a href="2026-06-09-1035Z.html">2026-06-09-1035Z</a><span class="when">9 Jun 2026, 10:35PM NZST</span></li>
+        <li><a href="2026-06-09-0509Z.html">2026-06-09-0509Z</a><span class="when">9 Jun 2026, 5:09PM NZST</span></li>
+        <li><a href="2026-06-08-2111Z.html">2026-06-08-2111Z</a><span class="when">9 Jun 2026, 9:11AM NZST</span></li>
+        <li><a href="2026-06-08-1200Z.html">2026-06-08-1200Z</a><span class="when">8 Jun 2026, 12:00AM NZST</span></li>
+        <li><a href="2026-06-08-0552Z.html">2026-06-08-0552Z</a><span class="when">8 Jun 2026, 5:52PM NZST</span></li>
+        <li><a href="2026-06-07-2014Z.html">2026-06-07-2014Z</a><span class="when">8 Jun 2026, 8:14AM NZST</span></li>
+        <li><a href="2026-06-07-1006Z.html">2026-06-07-1006Z</a><span class="when">7 Jun 2026, 10:06PM NZST</span></li>
+        <li><a href="2026-06-07-0813Z.html">2026-06-07-0813Z</a><span class="when">7 Jun 2026, 8:13PM NZST</span></li>
+        <li><a href="2026-06-07-0524Z.html">2026-06-07-0524Z</a><span class="when">7 Jun 2026, 5:24PM NZST</span></li>
+        <li><a href="2026-06-06-2038Z.html">2026-06-06-2038Z</a><span class="when">7 Jun 2026, 8:38AM NZST</span></li>
+        <li><a href="2026-06-06-2011Z.html">2026-06-06-2011Z</a><span class="when">7 Jun 2026, 8:11AM NZST</span></li>
+        <li><a href="2026-06-06-1112Z.html">2026-06-06-1112Z</a><span class="when">6 Jun 2026, 11:12PM NZST</span></li>
+        <li><a href="2026-06-06-1104Z.html">2026-06-06-1104Z</a><span class="when">6 Jun 2026, 11:04PM NZST</span></li>
+        <li><a href="2026-06-06-1049Z.html">2026-06-06-1049Z</a><span class="when">6 Jun 2026, 10:49PM NZST</span></li>
       </ul>
     </main>
 
     <footer class="site-footer">
-      Generated by an automated news tracker. &middot; <a href="index.html">&larr; Latest run</a>
+      Generated by an automated news tracker. Topics are configured in
+      <code>prompts/topics/</code>. &middot; <a href="index.html">&larr; Back to latest</a>
     </footer>
   </div>
   <script src="assets/app.js" defer></script>
